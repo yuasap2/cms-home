@@ -20,8 +20,8 @@ class ContactsController extends Controller
         //引っかかるとエラーを起こしてくれる
         $request -> validate([
         'email' =>  'required|email', 
-        'title' =>  'requred',
-        'bodfy' =>  'requred',
+        'title' =>  'required',
+        'body' =>  'required',
         ]);
 
         //フォームからの入力値を全て取得

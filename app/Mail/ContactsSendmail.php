@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use App\Mail\ContacactsSendmail;
 
-class Contactsendmail extends Mailable
+class ContactsSendmail extends Mailable
 {
     use Queueable, SerializesModels;
 

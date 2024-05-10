@@ -1,14 +1,16 @@
+@extends('layouts.base')
+
 @section('content')
 <form method="POST" action="{{ route('contact.send')}}">
     @csrf
 
     <label>メールアドレス</label>
-    {{ $input['email']}}
-    <input name="{{ $inputs['email']}}" type="hidden">
+    {{ $inputs['email']}}
+    <input name="email" value="{{ $inputs['email']}}" type="hidden">
 
     <label>タイトル</label>
-    {{ $input['title']}}
-    <input name="{{ $inputs['title']}}" type="hidden">
+    {{ $inputs['title']}}
+    <input name="title" value="{{ $inputs['title']}}" type="hidden">
 
 
     <label>お問い合わせ内容</label>

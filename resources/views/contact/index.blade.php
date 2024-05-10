@@ -1,3 +1,4 @@
+@extends('layouts.base')
 
 @section('content')
 <form method="POST" action="{{ route('contact.confirm')}}">
