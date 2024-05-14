@@ -16,7 +16,7 @@
     <label>タイトル</label>
     <input
         name="title"
-        value="{{old('title')}}"
+        value="{{ old('title')}}"
         type="text">
     @if ($errors->has('title'))
         <p class="error-message">{{ $errors->first('title')}}</p>

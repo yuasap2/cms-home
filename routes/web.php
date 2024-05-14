@@ -16,10 +16,9 @@ use App\Http\Controllers\ContactsController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/','BlogController@showList')->name('blogs');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/test/func',[TestController::class,'func']);
 
