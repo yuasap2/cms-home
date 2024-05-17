@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Mail\ContacactsSendmail;
+
 class ContactsController extends Controller
 {
    public function index()
@@ -37,7 +39,7 @@ class ContactsController extends Controller
     public function send(Request $request)
     {
         //バリデーションを実行（結果に問題が起これば処理を中断してエラーを返す）
-        $request->varidate([
+        $request->validate([
             'email' =>  'required|email',
             'title' =>  'required',
             'body'  =>  'required'
@@ -47,24 +49,24 @@ class ContactsController extends Controller
         $action = $request->input('action');
 
         //フォームから受け取ったactionを除いたinputの値を取得
-        $input = $request->except('action');
+        $inputs = $request->except('action');
 
         //actionの値で分岐
-        if($action !=='submit'){
-            return redirect()
-                ->route('contact.index')
-                ->withInput($inputs);
+        // if($action !=='submit'){
+        //     return redirect()
+        //         ->route('contact.index')
+        //         ->withInput($inputs);
        
-        } else {
-            //入力されたメールアドレスにメールを送信
-            \Mail::to($inputs['email'])->send(new ContactSendmail($inputs));
+        // } else {
+        //     //入力されたメールアドレスにメールを送信
+        //     \Mail::to($inputs['email'])->send(new ContactSendmail($inputs));
 
-            //再送信を防ぐためにトークンを再配行
-            $request->session()->regenerateToken();
+        //     //再送信を防ぐためにトークンを再配行
+        //     $request->session()->regenerateToken();
 
-            //送信完了ページのviewを表示
-            return view('contact.thanks');
-        }
-
+        //     //送信完了ページのviewを表示
+        //     return view('contact.thanks');
+        // }
+        return view('contact.thanks');
     }
 }
