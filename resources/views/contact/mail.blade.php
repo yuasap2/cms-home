@@ -7,4 +7,4 @@
 {!! $title !!}<br>
 <br>
 ■お問い合わせ<br>
-{!! n12br($body) !!}<br>
+{!! nl2br($body) !!}<br>

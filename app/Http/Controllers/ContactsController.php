@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Mail\ContacactsSendmail;
+use App\Mail\ContactsSendmail;
 
 class ContactsController extends Controller
 {
@@ -52,21 +52,20 @@ class ContactsController extends Controller
         $inputs = $request->except('action');
 
         //actionの値で分岐
-        // if($action !=='submit'){
-        //     return redirect()
-        //         ->route('contact.index')
-        //         ->withInput($inputs);
+        if($action !=='submit'){
+            return redirect()
+                ->route('contact.index')
+                ->withInput($inputs);
        
-        // } else {
-        //     //入力されたメールアドレスにメールを送信
-        //     \Mail::to($inputs['email'])->send(new ContactSendmail($inputs));
+        } else {
+            //入力されたメールアドレスにメールを送信
+            \Mail::to($inputs['email'])->send(new ContactsSendmail($inputs));
 
-        //     //再送信を防ぐためにトークンを再配行
-        //     $request->session()->regenerateToken();
+            //再送信を防ぐためにトークンを再配行
+            $request->session()->regenerateToken();
 
-        //     //送信完了ページのviewを表示
-        //     return view('contact.thanks');
-        // }
-        return view('contact.thanks');
+            //送信完了ページのviewを表示
+            return view('contact.thanks');
+        }
     }
 }
