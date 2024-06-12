@@ -1,0 +1,110 @@
+.input-area {
+    /* margin-bottom: 20px; */
+    border: 0px ;
+    background: #eaedf2;
+    border-radius: 6px;
+}
+input[type="text"] ,input[type="email"],select {
+    width: 300px;
+    height: 30px;
+}
+textarea{
+    width: 300px;
+    height: 100px;
+}
+/* p {
+    font-weight: bold;
+    font-size: 20px;
+} */
+label{
+    font-weight: bold;
+    font-size: 20px;
+}
+/* .btn-border {
+    display: inline-block;
+    max-width: 180px;
+    text-align: left;
+    border: 2px solid #9ec34b;
+    font-size: 15px;
+    color: #9ec34b;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: .4s;
+}
+.btn-border:hover {
+    background-color: #9ec34b;
+    border-color: #cde585;
+    color: #FFF;
+} */
+.required {
+    color: #FFFFFF;
+    background-color: #82c7b7;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    border-radius : 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 500px;
+    margin-right: 8px;
+}
+
+.btn{
+    border: 0px ;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    background-color: #82c7b7;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    border-radius : 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0 auto;
+}
+
+.Form-Item {
+    border-top: 1px solid #ddd;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;   
+}
+
+.Form-Item-Input {
+    border: 0px ;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 48px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+    margin: 0 1000px 0 auto;
+}
+
+.Form-Item-Input {
+    border: 0px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 48px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+    margin: 0 1000px 0 auto;
+}
