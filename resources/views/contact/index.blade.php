@@ -88,7 +88,6 @@
             padding-right: 1em;
             height: 48px;
             flex: 1;
-            width: 100%;
             max-width: 410px;
             background: #eaedf2;
             font-size: 18px;
@@ -210,9 +209,9 @@
     <input class=Form-Item-Input2 type="date" value="YYYY-MM-DD" name="example1" class=input-area
         name="title"
         value="{{ old('title')}}"><br>
-    <!-- @if ($errors->has('title'))
+    @if ($errors->has('title'))
         <p class="error-message">{{ $errors->first('title')}}</p>
-    @endif -->
+    @endif
     </div>
 
     <div class="Form-Item">
