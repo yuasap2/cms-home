@@ -4,16 +4,80 @@
 <form method="POST" action="{{ route('contact.confirm')}}">
     @csrf
     <style type="text/css">
+         .Form-Item {
+            border-top: 1px solid #ddd;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            width: 2500px;
+            display: flex;
+            align-items: center;   
+        }
+
+        .Form-Item2 {
+            border-top: 1px solid #ddd;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            width: 2500px;
+            display: flex;
+        }
+
+
+        .Form-Item-Input {
+            border: 0px ;
+            border-radius: 6px;
+            margin-left: 40px;
+            padding-left: 1em;
+            padding-right: 1em;
+            height: 48px;
+            flex: 1;
+            width: 100%;
+            max-width: 410px;
+            background: #eaedf2;
+            font-size: 18px;
+            margin: 0 1000px 0 auto;
+           
+        }
+
+        .Form-Item-Input2 {
+            border: 1px #2b2b2b solid;
+            border-radius: 6px;
+            margin-left: 40px;
+            padding-left: 1em;
+            padding-right: 1em;
+            height: 48px;
+            flex: 1;
+            width: 100%;
+            max-width: 410px;
+            font-size: 18px;
+            margin: 0 1000px 0 auto;
+        }
+
+        .Form-Item-gender {
+            border: 0px;
+            border-radius: 6px;
+            margin-left: 40px;
+            padding-left: 1em;
+            padding-right: 1em;
+            height: 48px;
+            flex: 1;
+            width: 100%;
+            max-width: 410px;
+            font-size: 18px;
+            margin: 0 1000px 0 auto;
+        }
+        
+        
         .input-area {
-            /* margin-bottom: 20px; */
             border: 0px ;
             background: #eaedf2;
             border-radius: 6px;
         }
+       
         input[type="text"] ,input[type="email"],select {
             width: 300px;
             height: 30px;
         }
+       
         textarea{
             width: 300px;
             height: 400px;
@@ -29,16 +93,10 @@
             background: #eaedf2;
             font-size: 18px;
             margin: 0 1000px 0 auto;
-            height:400px;
-            border: 0px ;
             background: #eaedf2;
-            border-radius: 6px;
         
         }
-        /* p {
-            font-weight: bold;
-            font-size: 20px;
-        } */
+        
         label{
             font-weight: bold;
             font-size: 20px;
@@ -91,88 +149,9 @@
             opacity: 0.3;
         }
 
-        .Form-Item {
-            border-top: 1px solid #ddd;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            width: 2500px;
-            display: flex;
-            align-items: center;   
-        }
+       
 
-        .Form-Item2 {
-            border-top: 1px solid #ddd;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            width: 2500px;
-            display: flex;
-            /* align-items: center;    */
-        }
-
-
-        .Form-Item-Input {
-            border: 0px ;
-            border-radius: 6px;
-            margin-left: 40px;
-            padding-left: 1em;
-            padding-right: 1em;
-            height: 48px;
-            flex: 1;
-            width: 100%;
-            max-width: 410px;
-            background: #eaedf2;
-            font-size: 18px;
-            margin: 0 1000px 0 auto;
-           
-        }
-
-        .Form-Item-Input2 {
-            border: 1px #2b2b2b solid;
-            border-radius: 6px;
-            margin-left: 40px;
-            padding-left: 1em;
-            padding-right: 1em;
-            height: 48px;
-            flex: 1;
-            width: 100%;
-            max-width: 410px;
-            font-size: 18px;
-            margin: 0 1000px 0 auto;
-        }
-
-        .Form-Item-gender {
-            border: 0px;
-            border-radius: 6px;
-            margin-left: 40px;
-            padding-left: 1em;
-            padding-right: 1em;
-            height: 48px;
-            flex: 1;
-            width: 100%;
-            max-width: 410px;
-            font-size: 18px;
-            margin: 0 1000px 0 auto;
-        }
-
-        /* .Form-Item-Input3 {
-            border: 0px ;
-            border-radius: 6px;
-            margin-left: 40px;
-            padding-left: 1em;
-            padding-right: 1em;
-            height: 48px;
-            flex: 1;
-            width: 100%;
-            max-width: 410px;
-            background: #eaedf2;
-            font-size: 18px;
-            margin: 0 1000px 0 auto;
-            height:400px;
-            border: 0px ;
-            background: #eaedf2;
-            border-radius: 6px;
-                       
-        } */
+       
 
 </style>
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
