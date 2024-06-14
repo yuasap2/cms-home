@@ -1,9 +1,11 @@
 @extends('layouts.base')
 
 @section('content')
-<form method="POST" action="{{ route('contact.confirm')}}">
-    @csrf
-    <style type="text/css">
+
+    
+<!-- <link rel="stylesheet" href="./css/style.css"> -->
+</head>
+<!-- <style type="text/css">
          .Form-Item {
             border-top: 1px solid #ddd;
             padding-top: 24px;
@@ -99,6 +101,7 @@
         label{
             font-weight: bold;
             font-size: 20px;
+           
         }
        
       
@@ -152,9 +155,9 @@
 
        
 
-</style>
-<!-- <link rel="stylesheet" href="./css/style.css"> -->
-</head>
+</style> -->
+<form method="POST" action="{{ route('contact.confirm')}}">
+    @csrf
     <div class="Form-Item">
     <p class=required>必須</p><label>会社名</label>
     <input class=Form-Item-Input
@@ -206,7 +209,7 @@
 
     <div class="Form-Item">
     <p class=required>必須</p><label>生年月日</label>
-    <input class=Form-Item-Input2 type="date" value="YYYY-MM-DD" name="example1" class=input-area
+    <input class=Form-Item-Input2 type="date" value=""  name="example1" class=input-area
         name="title"
         value="{{ old('title')}}"><br>
     @if ($errors->has('title'))

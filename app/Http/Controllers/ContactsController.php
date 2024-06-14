@@ -22,9 +22,12 @@ class ContactsController extends Controller
         //引っかかるとエラーを起こしてくれる
         $request -> validate([
         'email' =>  'required|email', 
-        'title' =>  'required',
+        // 'title' =>  'required',
         'body' =>  'required',
-        ]);
+        ],
+        ['email.required' => 'メールアドレスは必須です。',
+         'body.required' =>'お問い合わせ内容は必須です。'
+    ]);
 
         //フォームからの入力値を全て取得
         $inputs = $request->all();
