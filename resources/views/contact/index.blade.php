@@ -209,11 +209,10 @@
 
     <div class="Form-Item">
     <p class=required>必須</p><label>生年月日</label>
-    <input class=Form-Item-Input2 type="date" value=""  name="example1" class=input-area
-        name="title"
-        value="{{ old('title')}}"><br>
+    <input class=Form-Item-Input2 type="date"  class=input-area
+        value="{{ old('date')}}"><br>
     @if ($errors->has('title'))
-        <p class="error-message">{{ $errors->first('title')}}</p>
+        <p class="error-message">{{ $errors->first('date')}}</p>
     @endif
     </div>
 
