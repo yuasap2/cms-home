@@ -4,39 +4,87 @@
 <form method="POST" action="{{ route('contact.send') }}">
     @csrf
 
-    <label>会社名</label>
-    {{ $inputs['company']}}
-    <input name="company" value="{{ $inputs['company'] }}" type="hidden">
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+             <label>会社名</label>
+            </p>
+            {{ $inputs['company']}}
+            <input name="company" value="{{ $inputs['company'] }}" type="hidden">
+        </div>
+    </div>
 
-    <label>氏名</label>
-    {{ $inputs['name']}}
-    <input name="name" value="{{ $inputs['name'] }}" type="hidden">
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+              <label>氏名</label>
+            </p>
+            {{ $inputs['name']}}
+            <input name="name" value="{{ $inputs['name'] }}" type="hidden">
+         </div>
+     </div>
 
-    <label>電話番号</label>
-    {{ $inputs['telephone']}}
-    <input name="teleohone" value="{{ $inputs['telephone'] }}" type="hidden">
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+                <label>電話番号</label>
+            </p>
+            {{ $inputs['telephone']}}
+            <input name="teleohone" value="{{ $inputs['telephone'] }}" type="hidden">
+        </div>
+     </div>
+
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+                <label>メールアドレス</label>
+            </p>
+            {{ $inputs['email']}}
+            <input name="email" value="{{ $inputs['email'] }}" type="hidden">
+        </div>
+    </div>
+    
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+                <label>生年月日</label>
+            </p>
+            {{ $inputs['date']}}
+            <input name="date" value="{{ $inputs['date'] }}" type="hidden">
+        </div>
+    </div>
+
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+                <label>性別</label>
+            </p>
+            <dd>{{ $inputs['gender'] == 'man' ? '男' : '女' }}</dd>
+        </div>
+    </div>
 
     
-    <label>メールアドレス</label>
-    {{ $inputs['email']}}
-    <input name="email" value="{{ $inputs['email'] }}" type="hidden">
-
-    <label>生年月日</label>
-    {{ $inputs['date']}}
-    <input name="date" value="{{ $inputs['date'] }}" type="hidden">
-
-    <label>性別</label>
-            <dd>{{ $data['gender'] == 'man' ? '男' : '女' }}</dd>
-    
-     <label>職業</label>
-    {{ $inputs['gender']}}
-    <input name="gender" value="{{ $inputs['gender'] }}" type="hidden">
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+              <label>職業</label>
+            </p>
+            {{ $inputs['job']}}
+            <input name="job" value="{{ $inputs['job'] }}" type="hidden">
+        </div>
+    </div>
      
-    <label>お問い合わせ内容</label>
-    {!! nl2br(e($inputs['body'])) !!}
-    <input name="job" value="{{ $inputs['job'] }}" type="hidden">
+    <div class="Form">
+        <div class="Form-Item">
+            <p class="Form-Item-Label">
+               <label>お問い合わせ内容</label>
+            </p>
+            {!! nl2br(e($inputs['body'])) !!}
+            <input name="job" value="{{ $inputs['job'] }}" type="hidden">
+        </div>
+    </div>
 
-    <button type="submit" name="action" value="back">入力内容修正</button>
-    <button type="submit" name="action" value="submit">送信する</button>
+    <button class=Form-Btn type="submit" name="action" value="back">入力内容修正</button>
+    <button class=Form-Btn type="submit" name="action" value="submit">送信する</button>
 </form>
 @endsection

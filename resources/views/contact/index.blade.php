@@ -68,7 +68,7 @@
     <div class="Form">
         <div class="Form-Item">
         <span class="Form-Item-Label-Required">必須</span><label>生年月日</label>
-        <input class=Form-Item-Input2 type="date"  class=input-area
+        <input name="date" class=Form-Item-Input type="date"  class=input-area
             value="{{ old('date')}}">
         @if ($errors->has('title'))
             <p class="error-message">{{ $errors->first('date')}}</p>
@@ -93,7 +93,7 @@
     <div class="Form">
         <div class="Form-Item">
         <span class="Form-Item-Label-Required">必須</span><label>職業</label>
-            <select class=Form-Item-Input2 name="job">
+            <select class=Form-Item-Input name="job">
             <option value="">職業を選択してください</option>
             <option value="公務員">公務員</option>
             <option value="経営者・役員">経営者・役員</option>

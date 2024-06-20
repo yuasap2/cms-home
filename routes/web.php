@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\TestController;
+// use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\ContactsController;
 /*
@@ -16,11 +16,11 @@ use App\Http\Controllers\ContactsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/test/func',[TestController::class,'func']);
+// Route::get('/test/func',[TestController::class,'func']);
 
 //入力フォームページ
 Route::get('/contact',[ContactsController::class,'index'])->name('contact.index');

@@ -24,9 +24,16 @@ class ContactsController extends Controller
         'email' =>  'required|email', 
         // 'title' =>  'required',
         'body' =>  'required',
+        'date' => 'required',
+        'gender' => 'required',
+        'job' => 'required',
         ],
         ['email.required' => 'メールアドレスは必須です。',
-         'body.required' =>'お問い合わせ内容は必須です。'
+         'body.required' =>'お問い合わせ内容は必須です。',
+         'date.required' =>'生年月日は必須です。',
+         'gender.required' =>'性別は必須です。',
+         'job.required' =>'職業は必須です。',
+
     ]);
 
         //フォームからの入力値を全て取得
@@ -44,8 +51,11 @@ class ContactsController extends Controller
         //バリデーションを実行（結果に問題が起これば処理を中断してエラーを返す）
         $request->validate([
             'email' =>  'required|email',
-            'title' =>  'required',
-            'body'  =>  'required'
+            // 'title' =>  'required',
+            'body'  =>  'required',
+            'date' => 'required',
+            'gender' => 'required',
+            'job' => 'required',
         ]);
 
         //フォームから受け取ったactionの値を取得
