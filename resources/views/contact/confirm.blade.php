@@ -30,7 +30,7 @@
                 <label>電話番号</label>
             </p>
             {{ $inputs['telephone']}}
-            <input name="teleohone" value="{{ $inputs['telephone'] }}" type="hidden">
+            <input name="telephone" value="{{ $inputs['telephone'] }}" type="hidden">
         </div>
      </div>
 
@@ -60,6 +60,7 @@
                 <label>性別</label>
             </p>
             <dd>{{ $inputs['gender'] == 'man' ? '男' : '女' }}</dd>
+            <input name="gender" value="{{ $inputs['gender'] }}" type="hidden">
         </div>
     </div>
 
@@ -80,7 +81,7 @@
                <label>お問い合わせ内容</label>
             </p>
             {!! nl2br(e($inputs['body'])) !!}
-            <input name="job" value="{{ $inputs['job'] }}" type="hidden">
+            <input name="body" value="{{ $inputs['body'] }}" type="hidden">
         </div>
     </div>
 

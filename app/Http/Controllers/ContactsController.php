@@ -21,18 +21,23 @@ class ContactsController extends Controller
         //バリデーションルールを定義
         //引っかかるとエラーを起こしてくれる
         $request -> validate([
+        'company' => 'required',
+        'name' => 'required',
+        'telephone' => 'required',
         'email' =>  'required|email', 
-        // 'title' =>  'required',
-        'body' =>  'required',
-        'date' => 'required',
+        'date' => 'required|date',
         'gender' => 'required',
         'job' => 'required',
+        'body' =>  'required',
         ],
-        ['email.required' => 'メールアドレスは必須です。',
-         'body.required' =>'お問い合わせ内容は必須です。',
+        ['company' => '会社名は必須です。',
+         'name' => '氏名は必須です。',
+         'telephone' => '電話番号は必須です',
+         'email.required' => 'メールアドレスは必須です。',
          'date.required' =>'生年月日は必須です。',
          'gender.required' =>'性別は必須です。',
          'job.required' =>'職業は必須です。',
+         'body.required' =>'お問い合わせ内容は必須です。',
 
     ]);
 
@@ -50,12 +55,14 @@ class ContactsController extends Controller
     {
         //バリデーションを実行（結果に問題が起これば処理を中断してエラーを返す）
         $request->validate([
+            'company' => 'required',
+            'name' => 'required',
+            'telephone' => 'required',
             'email' =>  'required|email',
-            // 'title' =>  'required',
-            'body'  =>  'required',
-            'date' => 'required',
+            'date' => 'required|date',
             'gender' => 'required',
             'job' => 'required',
+            'body'  =>  'required',
         ]);
 
         //フォームから受け取ったactionの値を取得
