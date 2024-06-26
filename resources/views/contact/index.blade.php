@@ -83,7 +83,7 @@
             <p class="error-message">{{ $errors->first('date')}}</p>
         @endif
         </div>
-        </div>
+    </div>
         
         <div class="Form">
              <div class="Form-Item">
@@ -91,8 +91,8 @@
                     <span class="Form-Item-Label-Required">必須</span><label>性別</label>
                 </p>
                 <div class=Form-Item-gender>
-                    <input type="radio" name="gender" value="man" {{ old('gender') == 'man' ? 'checked' }}>男
-                    <input type="radio" name="gender" value="woman"{{ old('gender') == 'woman' ? 'checked' }}>女
+                    <input type="radio" name="gender" value="man" {{ old('gender') == 'man' ? 'checked'  : '' }}>男
+                    <input type="radio" name="gender" value="woman"{{ old('gender') == 'woman' ? 'checked' : '' }}>女
                 </div>
              </div>
                 @if ($errors->has('gender'))
