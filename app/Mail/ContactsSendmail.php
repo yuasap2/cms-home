@@ -50,7 +50,7 @@ private $body;
     {
         // メールの設定
         return $this
-                 ->from('example@gmail.com')
+                 ->from('mongaifushutsu0423@gmail.com')
                  ->subject('自動返信メール')
                  ->view('contact.mail')
                  ->with([

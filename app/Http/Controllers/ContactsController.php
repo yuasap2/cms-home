@@ -39,7 +39,7 @@ class ContactsController extends Controller
          'job.required' =>'職業は必須です。',
          'body.required' =>'お問い合わせ内容は必須です。',
 
-    ]);
+        ]);
 
         //フォームからの入力値を全て取得
         $inputs = $request->all();
@@ -81,11 +81,17 @@ class ContactsController extends Controller
             //入力されたメールアドレスにメールを送信
             \Mail::to($inputs['email'])->send(new ContactsSendmail($inputs));
 
+            // 自分にメールを送信
+            \Mail::to('mongaifushutsu0423@gmail.com')->send(new ContactsSendmail($inputs));
+
             //再送信を防ぐためにトークンを再配行
             $request->session()->regenerateToken();
 
             //送信完了ページのviewを表示
             return view('contact.thanks');
         }
+    
     }
+
+   
 }
