@@ -2,9 +2,6 @@
 
 @section('content')
 
-    
-</head>
-
 <form method="POST" action="{{ route('contact.confirm')}}">
     @csrf
    <div class="Form">
@@ -12,19 +9,22 @@
            <p class="Form-Item-Label">
              <span class="Form-Item-Label-Required">必須</span>会社名
            </p>
-            <input class=Form-Item-Input
+           <p class= wrap> 
+           <input class=Form-Item-Input
                    name="company"
                    value="{{ old('company')}}"
                    type="text"
                    placeholder="例）株式会社〇〇">
+           </input><br>
             @if($errors->has('company'))
-                    <p class="error-message">{{ $errors->first('company')}}</p>
+                   <p class="error-message">{{ $errors->first('company')}}</p>
             @endif
-            
-        </div>
-   </div>
+           </p>
+        </div>   
+
+   
     
-   <div class="Form"> 
+ 
         <div class="Form-Item">
             <p class="Form-Item-Label">
                 <span class="Form-Item-Label-Required">必須</span><label>氏名</label>
@@ -38,9 +38,9 @@
                     <p class="error-message">{{ $errors->first('name')}}</p>
              @endif
         </div>
-    </div>
+    
    
-    <div class="Form">
+    
         <div class="Form-Item">
             <p class="Form-Item-Label">  
              <span class="Form-Item-Label-Required">必須</span><label>電話番号</label>
@@ -54,9 +54,8 @@
                  <p class="error-message">{{ $errors->first('telephone') }}</p>
              @endif
         </div>
-    </div>
 
-    <div class="Form">
+    
         <div class="Form-Item">
             <p class="Form-Item-Label">
               <span class="Form-Item-Label-Required">必須</span><label>メールアドレス</label>
@@ -65,32 +64,30 @@
                    name="email"
                    value="{{ old('email')}}"
                    type="text"
-                   placeholder="例）example@email.com">
+                   placeholder="例）example@email.com"><br>
             @if($errors->has('email'))
                  <p class="error-message">{{ $errors->first('email')}}</p>
             @endif
         </div>
-    </div>
+    
 
-    <div class="Form">
         <div class="Form-Item">
           <p class="Form-Item-Label">
              <span class="Form-Item-Label-Required">必須</span><label>生年月日</label>
           </p>
-          <input  name="date" class=Form-Item-Input type="date" class=input-area
+          <input  name="date" class="Form-Item-Input-white" type="date" class=input-area
                  value="{{ old('date')}}">
         @if ($errors->has('date'))
             <p class="error-message">{{ $errors->first('date')}}</p>
         @endif
         </div>
-    </div>
+
         
-        <div class="Form">
              <div class="Form-Item">
                 <p class="Form-Item-Label">
                     <span class="Form-Item-Label-Required">必須</span><label>性別</label>
                 </p>
-                <div class=Form-Item-gender>
+                <div class="Form-Item-input-gender">
                     <input type="radio" name="gender" value="man" {{ old('gender') == 'man' ? 'checked'  : '' }}>男
                     <input type="radio" name="gender" value="woman"{{ old('gender') == 'woman' ? 'checked' : '' }}>女
                 </div>
@@ -98,15 +95,13 @@
                 @if ($errors->has('gender'))
                     <p class="error-message">{{ $errors->first('gender')}}</p>
                 @endif
-        </div>
-    </div>
-
-    <div class="Form">
+        
+    
         <div class="Form-Item">
           <p class="Form-Item-Label">
             <span class="Form-Item-Label-Required">必須</span><label>職業</label>
           </p>
-            <select class=Form-Item-Input name="job">
+            <select class=Form-Item-Input-white name="job">
             <option value="">職業を選択してください</option>
             <option value="公務員" {{ old('job') == '公務員' ? 'selected' : '' }}>公務員</option>
             <option value="経営者・役員" {{ old('job') == '経営者・役員' ? 'selected' : '' }}>経営者・役員</option>
@@ -122,22 +117,22 @@
             <p class="error-message">{{ $errors->first('job')}}</p>
         @endif
         </div>
-    </div>
+    
 
-
-    <div class="Form-Item">
-        <div class="Form-Item-Label inMsg">
-           <p class="Form-Item-Label">
-              <span class="Form-Item-Label-Required">必須</span>お問い合わせ内容</p>
-           </p>
-        <textarea class=Form-Item-Textarea name="body" cols="40" rows="4">{{old('body')}}</textarea><br>
+    
+       <div class="Form-Item">
+        <p class="Form-Item-Label isMsg">
+            <span class="Form-Item-Label-Required">必須</span>お問い合わせ内容</span>
+        </p>
+        <textarea class="Form-Item-Textarea" name="body" cols="40" rows="4">{{old('body')}}</textarea><br>
         @if($errors->has('body'))
-        <p class="erorrs-message">{{ $errors->first('body')}}</p>
+        <p class="error-message">{{ $errors->first('body')}}</p>
         @endif
-    </div>
-   </div>
+        </div>
 
-    <button type="submit" class=Form-Btn >確認する</button>
+
+       <button type="submit" class="Form-Btn" >確認する</button>
+    </div>
 </form>
 @endsection
 

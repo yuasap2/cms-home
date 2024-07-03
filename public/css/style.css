@@ -16,7 +16,7 @@
     padding-bottom: 24px;
     width: 100%;
     display: flex;
-    align-items: center;   
+    align-items: center;
 }
 @media screen and(max-width:480px) {
     .Form-Item{
@@ -85,7 +85,7 @@
   
 }
 
-.Form-Item-Input {
+.Form-Item-Input{
     border: 1px solid #ddd ;
     border-radius: 6px;
     margin-left: 40px;
@@ -96,6 +96,32 @@
     width: 100%;
     max-width: 410px;
     background: #eaedf2;
+    font-size: 18px;
+}
+
+.Form-Item-Input-white{
+    border: 1px solid #ddd ;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 48px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    font-size: 18px;
+}
+
+.Form-Item-Input-gender{
+    border: 1px solid #ddd ;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 48px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
     font-size: 18px;
 }
 
@@ -151,6 +177,7 @@
     cursor: pointer;
     transition: .4s;
 }
+
 @media screen and(max-width: 480px) {
    .Form-Btn {
     margin-top: 24px;
@@ -167,3 +194,13 @@
     color: #FFF;
     opacity: 0.3;
 }
+
+.error-message{
+    color :#ff0000
+}
+
+.wrap {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
