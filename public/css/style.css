@@ -185,10 +185,10 @@
    }
 }
 
-.Form-Btn :hover {
-    background-color :#66FFFF;
-    border-color: #cde585;
-    color: #FFF;
+.Form-Btn:hover {
+    background-color :#FFF;
+    border-color: #0a0a0a;
+    color: #001306;
     opacity: 0.3;
 }
 

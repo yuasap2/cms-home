@@ -56,5 +56,5 @@
         </p>
     </div>
 
-    <button class=Form-Btn type="button"  onclick="history.back(-2)">戻る</button>
+    <button class=Form-Btn type="button"  onClick="location.href=' http://127.0.0.1:8000/contact/'">戻る</button>
     @endsection
