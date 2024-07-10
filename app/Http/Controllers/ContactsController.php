@@ -31,9 +31,9 @@ class ContactsController extends Controller
         'body' =>  'required',
         ],
         ['company.required' => '会社名は必須です。',
-         'company.max' => '会社名は20文字以内でお願いします。',
+         'company.max' => '会社名は :max文字以内でお願いします。',
          'name.required' => '氏名は必須です。',
-         'name.max' => '氏名は20文字以内でお願いします。',
+         'name.max' => '氏名は :max文字以内でお願いします。',
          'telephone.required' => '電話番号は必須です',
          'telephone.regex' => '電話番号は半角数字とハイフンで入力してください。',
          'email.required' => 'メールアドレスは必須です。',
@@ -52,6 +52,8 @@ class ContactsController extends Controller
         return view('contact.confirm',[
         'inputs' => $inputs,
         ]);
+
+        
     }
 
     public function send(Request $request)
@@ -87,11 +89,15 @@ class ContactsController extends Controller
             // // 自分にメールを送信
             // \Mail::to('mongaifushutsu0423@gmail.com')->send(new ContactsSendmail($inputs));
 
-            //再送信を防ぐためにトークンを再配行
-            $request->session()->regenerateToken();
+            // 再送信を防ぐためにトークンを再配行
+            // $request->session()->regenerateToken();
+
+            $inputs = $request->all();
 
             //送信完了ページのviewを表示
-            return view('contact.thanks');
+            return view('contact.thanks',[
+            'inputs' => $inputs,
+            ]);
         }
     
     }
