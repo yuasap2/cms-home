@@ -16,11 +16,11 @@ use App\Http\Controllers\ContactsController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/test/func',[TestController::class,'func']);
+Route::get('/test/func',[TestController::class,'func']);
 
 //入力フォームページ
 Route::get('/contact',[ContactsController::class,'index'])->name('contact.index');
@@ -31,3 +31,7 @@ Route::post('/contact/thanks',[ContactsController::class,'send'])->name('contact
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
