@@ -251,3 +251,57 @@
     }
 }
 
+
+/* login */
+.container {
+    border-top: 20px solid #5BC8AC;
+    
+   
+    
+}
+
+.justify-content-center{
+    /* text-align: center; */
+    line-height: 250%;
+    margin-top: 500px;
+    margin-left: 400px;
+    margin-right: 400px;
+    width: 250px;
+    height: 300px;;
+    padding: 50px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.card-header {
+    font-size: 30px;
+    
+}
+
+.card {
+    
+   
+}
+
+.card-header{
+    text-align: center;
+}
+
+.card-body{
+    ;
+}
+
+.btn-primary {
+    font-size: 25px;
+    background-color: #5BC8AC;
+    color: #ffffff;
+    width: 150px;
+    height: 50px;
+    border-radius: 5%;
+    border: 0px;
+    cursor: pointer;
+}
+
+.col-md-8 {
+    text-align: left
+}
+
