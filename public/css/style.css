@@ -252,10 +252,12 @@
 }
 
 
-/* login */
+/* login　↓ */
 .container {
     border-top: 20px solid #5BC8AC;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
    
     
 }
@@ -263,38 +265,37 @@
 .justify-content-center{
     /* text-align: center; */
     line-height: 250%;
-    margin-top: 500px;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-top: 350px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 350px;
     width: 250px;
-    height: 300px;;
-    padding: 50px;
+    height: 300px;
+    padding: 80px;
+    
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
 
-.card-header {
-    font-size: 30px;
-    
-}
 
-.card {
-    
-   
-}
-
+/* 管理画面 */
 .card-header{
     text-align: center;
+    font-size: 30px;
 }
 
-.card-body{
-    ;
+
+/* 入力欄 */
+.form-control {
+    width: 245px;
+    height: 30px;
 }
 
+/* ボタン */
 .btn-primary {
     font-size: 25px;
     background-color: #5BC8AC;
     color: #ffffff;
-    width: 150px;
+    width: 250px;
     height: 50px;
     border-radius: 5%;
     border: 0px;
@@ -303,5 +304,10 @@
 
 .col-md-8 {
     text-align: left
+}
+
+/* エラーメッセージ　↓ */
+.invalid-feedback{
+    color: #ff0000;
 }
 
