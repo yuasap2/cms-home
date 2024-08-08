@@ -290,6 +290,13 @@
     height: 30px;
 }
 
+.is-invalid {
+    /* border-color: #c20c33; */
+	background-color: #ffd9e1;
+}
+
+
+
 /* ボタン */
 .btn-primary {
     font-size: 25px;
@@ -306,8 +313,71 @@
     text-align: left
 }
 
-/* エラーメッセージ　↓ */
+/* エラーメッセージ　 */
 .invalid-feedback{
     color: #ff0000;
 }
 
+
+/* ホーム画面　↓ */
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header {
+    height: 24px;
+    box-sizing: border-box;
+    text-align: right;
+
+}
+
+content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    background-color: #5BC8AC;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    list-style: none;
+    color: #fff;
+    
+
+}
+
+.content-top {
+    flex-grow: 1;
+    box-sizing: border-box;
+    background-color: #F7F7F7;
+    
+    
+
+  }
+  
+  .content-home {
+    height: 128px;
+    box-sizing: border-box;
+    background-color: #F5F9FC;
+    
+  }
+
+  .sidebar-home {
+    color: #fff;
+    text-decoration: none; 
+  }
+
+  .sidebar-register {
+    color: #fff;
+    text-decoration: none; 
+  }

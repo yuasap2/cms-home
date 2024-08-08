@@ -35,3 +35,7 @@ Route::post('/contact/thanks',[ContactsController::class,'send'])->name('contact
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route::get('auth/login',[loginController::class,'login'])->name('login');
+// Route::post('/home',[loginController::class,''])->name('home');
