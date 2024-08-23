@@ -326,58 +326,176 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+   
 
 }
 
-.header {
+.home .administrator {
     height: 24px;
     box-sizing: border-box;
     text-align: right;
+    padding: 30px;
 
 }
 
-content {
+.home content {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-
+    /* flex-direction: column; */
+    padding-left: 100px;
+    /* flex-grow: 1; */
+    
 }
 
 .sidebar {
     position: fixed;
     left: 0;
-    background-color: #5BC8AC;
-    width: 250px;
+    background-color: #4CAF93;
+    width: 150px;
     height: 100%;
-    text-align: center;
+    text-align: left;
     list-style: none;
     color: #fff;
+    padding: 30px;
+    
     
 
 }
 
-.content-top {
+.sidebar ul {
+    list-style: none;
+    
+
+}
+
+.sidebar ul li {
+    padding: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+
+}
+
+.content .content-top {
     flex-grow: 1;
     box-sizing: border-box;
     background-color: #F7F7F7;
-    
+    padding: 30px 0 30px 250px;
     
 
   }
   
-  .content-home {
+  .content .content-home {
     height: 128px;
     box-sizing: border-box;
     background-color: #F5F9FC;
-    
+    font-size: 30px;
+    padding-left: 250px;
   }
 
-  .sidebar-home {
-    color: #fff;
-    text-decoration: none; 
+  .content .content-home .member {
+    background-color: white;
+    text-align: left;
+    padding-top: 80px;
   }
 
-  .sidebar-register {
+  .content .content-home .member .member2 {
+    color: #4CAF93;
+  }
+
+  
+
+  .sidebar .sidebar-home {
     color: #fff;
     text-decoration: none; 
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+
+  .sidebar .sidebar-register {
+    color: #fff;
+    text-decoration: none; 
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+
+  
+  /* toggle section */
+  #check {
+    display: none;
+  }
+
+ 
+
+.hamburger {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50px;
+    flex: 0 0 50px;
+    text-align: right;
+    width: 100%;
+    -webkit-transition-property: width;
+    transition-property: width;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    border: 0;
+    padding: 0;
+    background: 0 0;
+}
+
+.hamburger {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50px;
+    flex: 0 0 50px;
+    text-align: right;
+    width: 100%;
+    -webkit-transition-property: width;
+    transition-property: width;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    border: 0;
+    padding: 0;
+    background: 0 0;
+}
+/* button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+} */
+
+/* バーガー */
+.hamburger  {
+    width: 40th;
+    height: 40th;
+    background-color: #000;
+}
+
+/* ハンバーガーメニューの線 */
+.hamburger span {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    position: relative;
+    transition: ease .4s; /*ハンバーガーメニュークリック時の三本線の動きを遅延*/
+    display: block;
+  }
+  
+  .hamburger span:nth-child(1) {
+    top: 0;
+  }
+  
+  .hamburger span:nth-child(2) {
+    margin: 8px 0;
+  }
+  
+  .hamburger span:nth-child(3) {
+    top: 0;
   }
