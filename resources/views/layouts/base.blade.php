@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" Content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/css/reset.css')  }}" >
     <link rel="stylesheet" href="{{ asset('/css/style.css')  }}" >
-    <link href=”https://use.fontawesome.com/releases/v6.0.0/css/all.css” rel=”stylesheet”>
     <title>お問い合わせ</title>
 </head>
 <body>
