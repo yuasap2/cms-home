@@ -30,22 +30,26 @@
                     <span class="hamburger-menu__bar"></span>
                     <span class="hamburger-menu__bar"></span>
                 </button>
-  <nav class="navigation">
-                <span class="trigger-icon"><span class="hamburger__inner">
+                <!-- <nav class="navigation">
+                <span class="trigger-icon">
+                    
+                <span class="hamburger__inner">
                 <span class="trigger-icon__line"></span><span class="_assistive-text"></span>
                 </span></span>
-                </button>
+                </button> -->
                 
                          
-                <li><i class="fa-solid fa-house"></i>
-                <a href="{{ route('home') }}" class="sidebar-home">HOME</a></li>
-                <li><i class="fa-regular fa-address-card"></i>
+                <li class="side-button"><i class="fa-solid fa-house" ></i>
+                <a href="{{ route('home') }}" class="sidebar-home" >HOME</a></li>
+                <li class="side-button"><i class="fa-regular fa-address-card"></i>
                 <a href="{{ route('member') }}" class="sidebar-register">会員登録</a></li>
                 <script>
                     $(function () {
-                    $('.sidebar').on('click', function () {
-                        $('.navigation').slideToggle(500)
-                        $('.sidebar').toggleClass('.sidebar--open')
+                    $('.hamburger-menu').on('click', function () {
+                        // $('.toggleClass').slideToggle(500)
+                        $('.sidebar').toggleClass('shrunk')
+                        $('.sidebar-home,.sidebar-register').text('');
+                        
                     });
                     });
                 </script>
@@ -56,9 +60,7 @@
       <header class="administrator">管理者</header>
       <div class="main">
        <div class="content">
-            <i class="fa-solid fa-house"></i>
             <div class ="content-top">TOP</div>
-            <i class="fa-solid fa-envelopes-bulk"></i>
             <div class ="content-home">
                 <div class = "home">HOME</div>
                 <div class ='member'>

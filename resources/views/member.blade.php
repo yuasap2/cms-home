@@ -25,19 +25,30 @@
      <div class="sidebar">
             <header></header>     
             <ul>
-            <button type="button" id="projectNavTrigger" class="project-nav-trigger">
-            <span class="trigger-icon"><span class="trigger-icon__inner">
-            <span class="trigger-icon__line"></span><span class="_assistive-text">Close</span></span></span>
-             </button>
+            <button type="button" id="  " class="hamburger">
+                <button class="hamburger-menu" id="js-hamburger-menu">
+                    <span class="hamburger-menu__bar"></span>
+                    <span class="hamburger-menu__bar"></span>
+                    <span class="hamburger-menu__bar"></span>
+                </button>
 
               
-                <li><span class="material-symbols-outlined">home</span><i class="fa-solid fa-house"></i>
+                <li class="side-button"><i class="fa-solid fa-house"></i>
                 <a href="{{ route('home') }}" class="sidebar-home">HOME</a></li>
-                <li><span class="material-symbols-outlined">local_post_office</span>
-                <a href="{{ route('member') }}" class="sidebar-register">会員登録2
-                </a></li>
+                <li class="side-button"><i class="fa-regular fa-address-card"></i>
+                <a href="{{ route('member') }}" class="sidebar-register">会員登録</a></li>
+                <script>
+                    $(function () {
+                    $('.hamburger-menu').on('click', function () {
+                        // $('.toggleClass').slideToggle(500)
+                        $('.sidebar').toggleClass('shrunk')
+                        $('.sidebar-home,.sidebar-register').text('')
+                        $('.hamburger').animate({ "marginRight": "100px"})
+                    });
+                    });
+                </script>
             </ul>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            
             
         </div>
   <div class="home">
@@ -47,7 +58,7 @@
             <div class ="content-top">TOP</div>
             <div class ="content-home">HOME
                 <div class ='member'>
-                    <header class = 'member2'>会員登録
+                    <header class = 'member2'>
                         <header class =>会員登録</header>
                     </header>
                 </div>
