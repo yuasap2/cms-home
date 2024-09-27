@@ -254,7 +254,7 @@
 
 /* login　↓ */
 .container {
-    border-top: 20px solid #5BC8AC;
+    border-top: 20px solid #4CAF93;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,7 +263,6 @@
 }
 
 .justify-content-center{
-    /* text-align: center; */
     line-height: 250%;
     margin-top: 350px;
     margin-left: 350px;
@@ -300,7 +299,7 @@
 /* ボタン */
 .btn-primary {
     font-size: 25px;
-    background-color: #5BC8AC;
+    background-color: #4CAF93;
     color: #ffffff;
     width: 300px;
     height: 50px;
@@ -339,13 +338,15 @@
 }
 
 .home content {
-    display: flex;
+    display: flex;a
     /* flex-direction: column; */
     padding-left: 100px;
     /* flex-grow: 1; */
     
 }
 
+
+/* 　スライドバー */
 .sidebar {
     position: fixed;
     left: 0;
@@ -355,12 +356,13 @@
     text-align: left;
     list-style: none;
     color: #fff;
-    padding: 30px;
+    padding: 10px;
     
     
 
 }
 
+/*  スライドバー　閉まったとき */
 .sidebar.shrunk {
   width: 50px;
   padding: 20px 10px;
@@ -379,12 +381,12 @@
 
 }
 
-.content .content-top {
+/* .content .content-top {
     flex-grow: 1;
     box-sizing: border-box;
     background-color: #F7F7F7;
     padding: 30px 0 30px 250px;
-  }
+  } */
 
   
   .content .content-home {
@@ -416,15 +418,29 @@
   .side-button {
     border-bottom: 1px solid #ffffff;
   }
+
+  .side-button .shrunk{
+    border-bottom: 0px;
+  }
+
+
+  .sidebar .sidebar-home-icon {
+    color: #fff;
+    text-decoration: none; 
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
  
   .sidebar .sidebar-home {
     color: #fff;
     text-decoration: none; 
     padding-left: 5px;
     padding-top: 5px;
-  
-  
   }
+
+ 
+
 
   .sidebar .sidebar-home .shrunk {
     text-indent:100%;
@@ -447,16 +463,16 @@
 
   
   /* toggle section */
-  #check {
+  /* #check {
     display: none;
-  }
+  } */
 
  
 
 .hamburger {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50px;
-    flex: 0 0 50px;
+    flex: 0 0 50px; 
     text-align: right;
     width: 100%;
     -webkit-transition-property: width;
@@ -470,22 +486,7 @@
     background: 0 0;
 }
 
-.hamburger {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50px;
-    flex: 0 0 50px;
-    text-align: right;
-    width: 100%;
-    -webkit-transition-property: width;
-    transition-property: width;
-    -webkit-transition-duration: .15s;
-    transition-duration: .15s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-    border: 0;
-    padding: 0;
-    background: 0 0;
-}
+
 /* button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
@@ -500,11 +501,11 @@ button, input, optgroup, select, textarea {
 } */
 
 /* バーガー */
-.hamburger  {
+/* .hamburger  {
     width: 40th;
     height: 40th;
     background-color: #4CAF93;
-}
+} */
 
 .hamburger-menu {
     width: 50px;
@@ -522,7 +523,8 @@ button, input, optgroup, select, textarea {
     height: 2px;
     background: #ffffff;
     position: absolute;
-    left: 300%;
+    margin-right: 8px;
+    /* left: 300%; */
     transform: translateX(-50%);
     transition: .5s;
   }

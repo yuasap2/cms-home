@@ -27,62 +27,50 @@
 </head>
 <body>
     <div id="app">
-        <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-                     <!-- Left Side Of Navbar -->
-                    <!-- <ul class="navbar-nav me-auto">
-
-                    </ul> -->
-
-                    <!-- Right Side Of Navbar -->
-                    <!-- <ul class="navbar-nav ms-auto"> -->
-                        <!-- Authentication Links -->
-                        <!-- @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
 
         <main class="py-4">
-            @yield('content')
+            
+        <div class="sidebar">
+            <header></header>     
+            <ul>
+                <!-- ハンバーガー -->
+                <button type="button" id="  " class="hamburger">
+                    <button class="hamburger-menu" id="js-hamburger-menu">
+                        <span class="hamburger-menu__bar"></span>
+                        <span class="hamburger-menu__bar"></span>
+                        <span class="hamburger-menu__bar"></span>
+                    </button>
+
+               <!-- アイコン ホーム-->
+                <a href="{{ route('home') }}" class="sidebar-home-icon">
+                    <li class="side-button"><i class="fa-solid fa-house"></i>
+                </a>
+                <a href="{{ route('home') }}" class="sidebar-home">HOME</a></li>
+               
+                
+                <!-- アイコン 会員登録-->
+                <a href="{{ route('member') }}" class="sidebar-register">
+                    <li class="side-button"><i class="fa-regular fa-address-card"></i>
+                </a>
+                <a href="{{ route('member') }}" class="sidebar-register">会員登録</a></li>
+                
+                <script>
+                    $(function () {
+                        $('.hamburger-menu').on('click', function () {
+                            // $('.toggleClass').slideToggle(500)
+                            $('.sidebar').toggleClass('shrunk')
+                            $('.sidebar-home,.sidebar-register').toggle()
+                            $('.side-button').toggle()
+                            // $('.hamburger').animate({ "marginRight": "100px"})
+                        });
+                    });
+                </script>
+            </ul>
+            
+            
+        </div>
+           @yield('content')
         </main>
     </div>
 </body>
