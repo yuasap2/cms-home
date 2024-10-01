@@ -2,9 +2,7 @@
 
 @section('content')
 
-   
-  <body>
-    
+ <body>
   <div class="home">
       <header class="administrator">管理者</header>
       <div class="main">
@@ -14,15 +12,14 @@
                 <div class = "home">HOME</div>
                 <div class ='member'>
                     <header class = 'member2'>
-                        会員登録
-                        <header class =></header>
+                        <header class =>会員登録</header>
                     </header>
                 </div>
             </div>
             </div>
        </div>
-       
     </div>
+    
 </body>
 
 @endsection
