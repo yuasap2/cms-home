@@ -320,14 +320,12 @@
 
 /* ホーム画面　↓ */
 
-.home {
+/* .home {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-   
-
-}
+} */
 
 .home .administrator {
     height: 24px;
@@ -337,12 +335,30 @@
 
 }
 
-.home content {
+.home .content {
     display: flex;
     /* flex-direction: column; */
     padding-left: 100px;
     /* flex-grow: 1; */
     
+}
+
+.main .content .content-home .home {
+  padding: 100px;
+}
+
+.member-registration {
+  padding: 30px;
+  text-align: center;
+}
+
+.membership-roll {
+  font-size: 20px;
+  color: black;
+  background-color: #F7F7F7;
+  text-align: center;
+
+
 }
 
 
@@ -386,6 +402,10 @@
     box-sizing: border-box;
     background-color: #F7F7F7;
     padding: 15px 0 15px 250px;
+  }
+
+  .sidebar .hamburger {
+    width: 80px;
   }
 
   

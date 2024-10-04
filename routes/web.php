@@ -4,6 +4,7 @@
 
 // use App\Http\Controllers\TestController;
 
+
 use App\Http\Controllers\ContactsController;
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,5 @@ Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->
 
 // Route::get('auth/login',[loginController::class,'login'])->name('login');
 // Route::post('/home',[loginController::class,''])->name('home');
+
+
