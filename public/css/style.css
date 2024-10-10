@@ -320,14 +320,9 @@
 
 /* ホーム画面　↓ */
 
-/* .home {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-} */
 
-.home .administrator {
+/* 管理者 */
+.main-part .administrator {
     height: 24px;
     box-sizing: border-box;
     text-align: right;
@@ -335,31 +330,65 @@
 
 }
 
-.home .content {
-    display: flex;
-    /* flex-direction: column; */
-    padding-left: 100px;
-    /* flex-grow: 1; */
-    
+
+/* TOP */
+.main-part  .content .content-top {
+  box-sizing: border-box;
+  background-color: #F7F7F7;
+  padding: 15px 0px 15px 178px;
 }
 
-.main .content .content-home .home {
-  padding: 100px;
+.main-part .content .content-home {
+  height: 264px;
+  box-sizing: border-box;
+  background-color: #F5F9FC;
+  padding: 50px 0px 50px 178px;
+ 
 }
 
-.member-registration {
+/* HOME */
+.main-part .content .content-home .home {
+  font-size: 32px;
+  padding: 50px 0px;
+  margin-left: 72px;
+  /* text-align: center; */
+}
+
+.main-part  .content .content-home .member {
+  background-color: white;
+  padding: 40px;
+  margin-left: 80px;
+  margin-right: 80px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+
+
+/* 会員登録 */
+.main-part  .content .content-home .member .member-registration {
+  font-size: 24px;
+  color: #4CAF93;
   padding: 30px;
   text-align: center;
 }
 
-.membership-roll {
+/* 会員一覧 */
+.main-part  .content .content-home .member .membership-roll {
+  width: 100px;
   font-size: 20px;
   color: black;
   background-color: #F7F7F7;
-  text-align: center;
-
-
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding: 30px 10px;
 }
+
+
+
+
+
+
 
 
 /* 　スライドバー */
@@ -372,7 +401,7 @@
     text-align: left;
     list-style: none;
     color: #fff;
-    padding: 10px;
+    padding: 0px;
     
     
 
@@ -380,7 +409,7 @@
 
 /*  スライドバー　閉まったとき */
 .sidebar.shrunk {
-  width: 50px;
+  width: 72px;
   padding: 20px 10px;
 }
 
@@ -397,43 +426,9 @@
 
 }
 
-.content .content-top {
-    flex-grow: 1;
-    box-sizing: border-box;
-    background-color: #F7F7F7;
-    padding: 15px 0 15px 250px;
-  }
-
   .sidebar .hamburger {
     width: 80px;
   }
-
-  
-  .content .content-home {
-    height: 128px;
-    box-sizing: border-box;
-    background-color: #F5F9FC;
-    font-size: 30px;
-    padding-left: 250px;
-  }
-
-  .content .content-home .home {
-    height: 64px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-   
-  }
-
-  .content .content-home .member {
-    background-color: white;
-    text-align: left;
-    padding-top: 80px;
-  }
-
-  .content .content-home .member .member2 {
-    color: #4CAF93;
-  }
-
  
   .side-button {
     border-bottom: 1px solid #ffffff;
@@ -459,12 +454,6 @@
     padding-top: 5px;
   }
 
-  .sidebar .sidebar-home .shrunk {
-    text-indent:100%;
-	  white-space:nowrap;
-	  overflow:hidden;
-  }
-
   .sidebar .sidebar-register {
     color: #fff;
     text-decoration: none; 
@@ -472,7 +461,7 @@
     padding-top: 5px;
   }
 
-  .sidebar .sidebar-register .shrunk {
+  .sidebar .shrunk .sidebar-register  {
     text-indent:100%;
 	  white-space:nowrap;
 	  overflow:hidden;
@@ -507,6 +496,8 @@
     cursor: pointer;
     text-align:right;
   }
+
+
   .hamburger-menu__bar {
     display: inline-block;
     width: 44%;
@@ -514,8 +505,6 @@
     background: #ffffff;
     position: absolute;
     margin-right: 8px;
-    transform: translateX(-50%);
-    transition: .5s;
   }
   .hamburger-menu__bar:first-child {
     top: 16px;
@@ -526,20 +515,3 @@
   .hamburger-menu__bar:last-child {
     top: 32px;
   }
-
-/* 
-  .hamburger-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  z-index: 1002;
-  background-color: rgb(43, 43, 43);
-  border: none;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  outline: none;
-} */
