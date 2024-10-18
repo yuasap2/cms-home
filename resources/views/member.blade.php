@@ -3,7 +3,7 @@
 @section('content')
    
   <body>
-  <div class="sidebar">
+            <div class="sidebar">
                 <header></header>     
                     <ul>
                         <!-- ハンバーガー  -->

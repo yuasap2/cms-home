@@ -1,8 +1,8 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
-// use App\Http\Controllers\TestController;
+use App\Http\Controllers\TestController;
 
 
 use App\Http\Controllers\ContactsController;
@@ -17,9 +17,9 @@ use App\Http\Controllers\ContactsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/test/func',[TestController::class,'func']);
 
@@ -35,7 +35,7 @@ Route::post('/contact/thanks',[ContactsController::class,'send'])->name('contact
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
 
 // Route::get('auth/login',[loginController::class,'login'])->name('login');

@@ -13,7 +13,7 @@ class CreteAdminUsersTable extends Migration
      */
     public function up()
     {
-       Schema::crate('admin_users', function (Blueprint $table) {
+       Schema::create('admin_users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -22,10 +22,7 @@ class CreteAdminUsersTable extends Migration
             $table->integer('admin_level');
             $table->rememberToken();
             $table->timestamps();
-
-
-
-       });
+          });
    } 
 
     /**
@@ -35,6 +32,6 @@ class CreteAdminUsersTable extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('admin_users', function (Blueprint $table);
+      Schema::dropIfExists('admin_users');
     }
  }
