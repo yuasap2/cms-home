@@ -48,7 +48,7 @@
                                 <div class ="content-home">
                                     <div class = "home">HOME</div>
                                     <div class ='member'>
-                                            <header class = >
+                                            <header>
                                                     <div class = 'member-registration'>会員登録</div>
                                                     <div class = 'membership-roll'>会員一覧</div>
 
@@ -56,8 +56,19 @@
                                             </header>
                                     </div>
                                 </div>
-                         </div>                
+                                <!-- <div class="logout-button">
+                                    <a action="{{ route('logout') }}">ログアウト</a>
+                                </div> -->
+                                <form method="POST" action="{{ route('logout') }}" class="logout" >
+                                    @csrf
+                                    <button type="submit">Logout</button>
+                                </form>  
+                                
+                         </div> 
+                                
             </div>
+            
+           
 
    
     

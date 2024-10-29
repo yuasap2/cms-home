@@ -37,6 +37,8 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
+// Route::get('/logout', [App\Http\Controllers\HomeController::class, 'index'])->name('logout');
+Route::post('/logout',[App\Http\Controllers\your_controller::class,'your-logout-method'])->name('logout');
 
 // Route::get('auth/login',[loginController::class,'login'])->name('login');
 // Route::post('/home',[loginController::class,''])->name('home');

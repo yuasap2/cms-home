@@ -517,3 +517,48 @@
   .hamburger-menu__bar:last-child {
     top: 32px;
   }
+
+
+  .logout-button a {
+    background: #f7f7f7;
+    border-radius: 9999px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 200px 180px 0 368px;
+    max-width: 250px;
+    padding: 10px 25px;
+    font-family: "Noto Sans Japanese";
+    color: #333333;
+    line-height: 1.8;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+}
+.logout-button a:hover {
+    background: #333333;
+    color: #FFF;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgb(0 0 0 / 30%), 0 0 5px rgb(0 0 0 / 30%);
+}
+.logout-button a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.logout-button a:hover:after {
+    border-color: #FFF;
+}
+
+.logout {
+  margin-top:500px;
+}
