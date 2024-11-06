@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-   
-  <body>
+
+ <body>
             <div class="sidebar">
                 <header></header>     
                     <ul>
@@ -42,30 +42,48 @@
             </div>
             
             <div class="main-part">
-                <header class="administrator">管理者</header>
-                        <div class="content">
-                                <div class ="content-top">TOP</div>
-                                <div class ="content-home">
-                                    <div class = "home">HOME</div>
-                                    <div class ='member'>
-                                            <header>
-                                                    <div class = 'member-registration'>会員登録</div>
-                                                    <div class = 'membership-roll'>会員一覧</div>
-                                                    <form method="POST" action="{{ route('logout') }}" class="logout" >
-                                                        @csrf
-                                                        <button type="submit" class="btn-logout">ログアウト</button>
-                                                    </form> 
-
-
-                                            </header>
-                                    </div>
-                                </div>
-                         </div>                
+                <header>アカウント一覧</header>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>見出し</th>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>見出し</th>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>見出し</th>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>見出し</th>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                        </tr>
+                        <tr>
+                            <th>見出し</th>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                            <td>テキストが入ります</td>
+                        </tr>
+                    </tbody>
+                </table>
+                                
             </div>
+            
+           
 
-       
-        
-                
+   
+    
 </body>
 
 @endsection

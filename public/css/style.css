@@ -322,6 +322,14 @@
 
 
 /* 管理者 */
+.main-part {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
 .main-part .administrator {
     height: 24px;
     box-sizing: border-box;
@@ -519,46 +527,29 @@
   }
 
 
-  .logout-button a {
-    background: #f7f7f7;
-    border-radius: 9999px;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 200px 180px 0 368px;
-    max-width: 250px;
-    padding: 10px 25px;
-    font-family: "Noto Sans Japanese";
-    color: #333333;
-    line-height: 1.8;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-    font-weight: 500;
-}
-.logout-button a:hover {
-    background: #333333;
-    color: #FFF;
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgb(0 0 0 / 30%), 0 0 5px rgb(0 0 0 / 30%);
-}
-.logout-button a:after {
-    content: '';
-    width: 5px;
-    height: 5px;
-    border-top: 3px solid #333333;
-    border-right: 3px solid #333333;
-    transform: rotate(45deg) translateY(-50%);
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    border-radius: 1px;
-    transition: 0.3s ease-in-out;
-}
-.logout-button a:hover:after {
-    border-color: #FFF;
+.logout {
+  /* margin-top:500px; */
+  text-align:center;
 }
 
-.logout {
-  margin-top:500px;
+
+
+.btn-logout {
+  /* margin-top:500px; */
+  display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: 45px auto;
+	/* padding: 1rem 4rem; */
+	font-weight: bold;
+	border: 2px solid #4CAF93;
+	color: #4CAF93;
+	transition: 0.5s;
+}
+
+.btn-logout:hover {
+	color: #fff;
+	background: #4CAF93;
 }
