@@ -262,7 +262,8 @@
     
 }
 
-.justify-content-center{
+/* justify-content-centerというクラスは思わぬ挙動を起こすため定義しないほうがいいです。 */
+.login-center{
     line-height: 250%;
     margin-top: 40px;
     margin-left: auto;
@@ -325,7 +326,8 @@
 .main-part {
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
+  width: (100% - 150%)
   font-style: normal;
 }
 
@@ -343,7 +345,7 @@
 .main-part  .content .content-top {
   box-sizing: border-box;
   background-color: #F7F7F7;
-  padding: 15px 0px 15px 178px;
+  padding: 20px;
 }
 
 .main-part .content .content-home {
@@ -355,6 +357,11 @@
 }
 
 /* HOME */
+
+.home {
+  padding: 20px;
+}
+
 .main-part .content .content-home .home {
   font-size: 32px;
   padding: 50px 0px;
@@ -364,9 +371,10 @@
 
 .main-part  .content .content-home .member {
   background-color: white;
-  padding: 40px;
-  width: 300px;
-  height: 200px;
+  padding: 30px;
+  width: 95%;
+  /* width: 300px; */
+  height: 330px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
@@ -379,7 +387,7 @@
   font-size: 24px;
   color: #4CAF93;
   padding: 30px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* 会員一覧 */
@@ -436,12 +444,13 @@
 
 }
 
-  .sidebar .hamburger {
+  /* .sidebar .hamburger {
     width: 80px;
-  }
+  } */
  
   .side-button {
     border-bottom: 1px solid #ffffff;
+    padding: 15px 0;
   }
 
   .side-button .shrunk{
@@ -536,13 +545,14 @@
 
 .btn-logout {
   /* margin-top:500px; */
-  display: block;
+  /* display: block;
 	text-align: center;
 	vertical-align: middle;
 	text-decoration: none;
 	width: 120px;
-	margin: 45px auto;
-	/* padding: 1rem 4rem; */
+	margin: 45px auto; */
+	padding: 3px;
+  border-radius: 5px;
 	font-weight: bold;
 	border: 2px solid #4CAF93;
 	color: #4CAF93;

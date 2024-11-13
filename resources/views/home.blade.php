@@ -3,75 +3,66 @@
 @section('content')
 
  <body>
-            <div class="sidebar">
-                <header></header>     
+        <div class="d-flex row">
+            <div class="sidebar">   
                     <ul>
                         <!-- ハンバーガー  -->
-                        <button type="button" class="hamburger">
-                            <button class="hamburger-menu" id="js-hamburger-menu">
-                                <span class="hamburger-menu__bar"></span>
-                                <span class="hamburger-menu__bar"></span>
-                                <span class="hamburger-menu__bar"></span>
-                            </button>
+                        {{-- <button type="button" class="hamburger"> --}}
+                        <button class="hamburger-menu" id="js-hamburger-menu">
+                            <span class="hamburger-menu__bar"></span>
+                            <span class="hamburger-menu__bar"></span>
+                            <span class="hamburger-menu__bar"></span>
+                        </button>
 
                         <!-- アイコン ホーム -->
                         <a href="{{ route('home') }}" class="sidebar-home-icon">
-                            <li class="side-button"><i class="fa-solid fa-house"></i>
+                            <li class="side-button"><i class="fa-solid fa-house"></i>HOME</li>
                         </a>
-                        <a href="{{ route('home') }}" class="sidebar-home">HOME</a></li>
-                    
                         
                         <!-- アイコン 会員登録 -->
                         <a href="{{ route('member') }}" class="sidebar-register">
-                            <li class="side-button"><i class="fa-regular fa-address-card"></i>
+                            <li class="side-button"><i class="fa-regular fa-address-card"></i>会員登録</li>
                         </a>
-                        <a href="{{ route('member') }}" class="sidebar-register">会員登録</a></li>
-                        
-                        <script>
-                            $(function () {
-                                $('.hamburger-menu').on('click', function () {
-                                    // $('.toggleClass').slideToggle(500)
-                                    $('.sidebar').toggleClass('shrunk')
-                                    $('.sidebar-home,.sidebar-register').toggle()
-                                    $('.side-button').toggle()
-                                    // $('.hamburger').animate({ "marginRight": "100px"})
-                                });
-                            });
-                        </script>
-                    </ul>
+                     </ul>
             </div>
+                        
+                        
             
             <div class="main-part">
-                <header class="administrator">管理者</header>
-                        <div class="content">
-                                <div class ="content-top">TOP</div>
-                                <div class ="content-home">
-                                    <div class = "home">HOME</div>
-                                    <div class ='member'>
-                                            <header>
-                                                    <div class = 'member-registration'>会員登録</div>
-                                                    <div class = 'membership-roll'>会員一覧</div>
-                                                    <form method="POST" action="{{ route('logout') }}" class="logout" >
-                                                        @csrf
-                                                        <button type="submit" class="btn-logout">ログアウト</button>
-                                                    </form> 
-
-                                            </header>
-                                    </div>
-                                </div>
-                                <!-- <div class="logout-button">
-                                    <a action="{{ route('logout') }}">ログアウト</a>
-                                </div> -->
-                                 
-                                
-                         </div> 
-                                
+                <header class="d-flex justify-content-end align-items-center administrator">
+                    <h3 class="me-2">管理者</h3>
+                    <form method="POST" action="{{ route('logout') }}" class="logout" >
+                         @csrf
+                         <button type="submit" class="btn-logout">ログアウト</button>
+                    </form> 
+                </header>
+                <div class="content">
+                    <h3 class ="content-top">TOP</h3>
+                    <h2 class="home">HOME</h2>
+                    <div class ="content-home">
+                        <div class ='member'>
+                            <div>
+                                <div class = 'member-registration'>会員登録</div>
+                                <div class = 'membership-roll'>会員一覧</div>
+                             </div>
+                        </div>
+                     </div>
+                 </div>                   
             </div>
-            
-           
-
-   
+    </body>
     
-</body>
+    <script>
+        $(function () {
+            $('.hamburger-menu').on('click', function () {
+            // $('.toggleClass').slideToggle(500)
+            $('.sidebar').toggleClass('shrunk')
+            $('.sidebar-home,.sidebar-register').toggle()
+            $('.side-button').toggle()
+            // $('.hamburger').animate({ "marginRight": "100px"})
+            });
+         });
+    </script> 
+              
+
 
 @endsection
