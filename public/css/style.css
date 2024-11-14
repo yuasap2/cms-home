@@ -327,8 +327,9 @@
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  width: (100% - 150%)
+  width: (100% - 150px);
   font-style: normal;
+  margin-left: auto;
 }
 
 
@@ -349,10 +350,10 @@
 }
 
 .main-part .content .content-home {
-  height: 264px;
+  /* height: 264px; */
   box-sizing: border-box;
   background-color: #F5F9FC;
-  padding: 50px 0px 50px 178px;
+  /* padding: 50px 0px 50px 178px; */
  
 }
 
@@ -371,10 +372,10 @@
 
 .main-part  .content .content-home .member {
   background-color: white;
-  padding: 30px;
-  width: 95%;
+  padding: 30px 30px 140px 30px;
+  width: 93%;
   /* width: 300px; */
-  height: 330px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
@@ -396,10 +397,10 @@
   font-size: 20px;
   color: black;
   background-color: #F7F7F7;
-  margin-left: auto;
+  /* margin-left: auto; */
   margin-right: auto;
   text-align: left;
-  padding: 30px 10px;
+  padding: 15px 31px;
 }
 
 
@@ -557,6 +558,9 @@
 	border: 2px solid #4CAF93;
 	color: #4CAF93;
 	transition: 0.5s;
+  position: fixed;
+  top: 20px;
+  right: 105px;
 }
 
 .btn-logout:hover {
