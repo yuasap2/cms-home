@@ -519,7 +519,6 @@
     background: #ffffff;
     position: absolute;
     margin-right: 8px;
-    margin: 0 0 0 auto;
   }
   .hamburger-menu__bar:first-child {
     top: 16px;
