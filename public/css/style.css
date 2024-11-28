@@ -428,8 +428,7 @@
 
 /*  スライドバー　閉まったとき */
 .sidebar.shrunk {
-  width: 72px;
-  padding: 20px 10px;
+    width: 80px;
 }
 
 .sidebar ul {
@@ -509,6 +508,21 @@
     padding: 10px;
     cursor: pointer;
     text-align:right;
+    left: 70px;
+  }
+
+  .hamburger-menu-shrunk {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    border: none;
+    background: transparent;
+    appearance: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align:right;
+    left: 0px;
+    color:#001306;
   }
 
 
@@ -533,13 +547,6 @@
 
 
 .btn-logout {
-  /* margin-top:500px; */
-  /* display: block;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	width: 120px;
-	margin: 45px auto; */
 	padding: 3px;
   border-radius: 5px;
 	font-weight: bold;
@@ -554,4 +561,15 @@
 .btn-logout:hover {
 	color: #fff;
 	background: #4CAF93;
+}
+
+
+/* 表 */
+table th,td{
+  border:1px solid #333;
+  padding: 16px
+}
+
+.account-name{
+ padding: 10px
 }

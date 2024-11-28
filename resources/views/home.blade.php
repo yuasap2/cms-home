@@ -3,7 +3,6 @@
 @section('content')
 
  <body>
-        <div class="d-flex row">
             <div class="sidebar">   
                     <ul>
                         <!-- ハンバーガー  -->
@@ -22,6 +21,11 @@
                         <!-- アイコン 会員登録 -->
                         <a href="{{ route('member') }}" class="sidebar-register">
                             <li class="side-button"><i class="fa-regular fa-address-card"></i>会員登録</li>
+                        </a>
+
+                         <!-- アイコン  -->
+                         <a href="{{ route('account') }}" class="sidebar-register">
+                            <li class="side-button"><i class="fa-solid fa-pen"></i>会員一覧</li>
                         </a>
                      </ul>
             </div>
@@ -46,19 +50,23 @@
                                 <div class = 'membership-roll'>会員一覧</div>
                              </div>
                         </div>
-                     </div>
+                    </div>
                  </div>                   
             </div>
-    </body>
+</body>
     
     <script>
         $(function () {
             $('.hamburger-menu').on('click', function () {
-            // $('.toggleClass').slideToggle(500)
-            $('.sidebar').toggleClass('shrunk')
-            $('.sidebar-home,.sidebar-register').toggle()
-            $('.side-button').toggle()
-            // $('.hamburger').animate({ "marginRight": "100px"})
+                // $('.toggleClass').slideToggle(500)
+                $('.sidebar').toggleClass('shrunk')
+                $('.hamburger-menu').toggleClass('.hamburger-menu-shrunk')
+                $('.sidebar-home,.sidebar-register').toggle()
+                // $('.side-button').toggle()
+                // $('.hamburger').animate({ "marginRight": "100px"})
+            });
+            $('.hamburger-menu-shrunk').on('click', function () {
+                $('.hamburger-menu-shrunk').toggleClass('.hamburger-menu-shrunk')
             });
          });
     </script> 

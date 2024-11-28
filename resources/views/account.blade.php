@@ -41,69 +41,96 @@
                     </ul>
             </div>
             
-            <div class="table">
-                <header>アカウント一覧</header>
+            <div class=main-part>
+                <header class=account-name>アカウント一覧</header>
                 <table>
                     <tbody>
                         <tr>
                             <th>編集</th>
-                            <td>テキストが入ります</td>
                             <th>削除</th>
-                            <td>テキストが入ります</td>
                             <th>名前</th>
-                            <td>テキストが入ります</td>
                             <th>メールアドレス</th>
-                            <td>テキストが入ります</td>
                             <th>電話番号</th>
-                            <td>テキストが入ります</td>
                             <th>都道府県</th>
-                            <td>テキストが入ります</td>
                             <th>市町村</th>
-                            <td>テキストが入ります</td>
                             <th>番地・アパート名</th>
-                            <td>テキストが入ります</td>
                         </tr>
                         <tr>
                             <!-- <th>削除</th> -->
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
+                            <td>edit</td>
+                            <td>delete</td>
+                            <td>name</td>
+                            <td>email</td>
+                            <td>telephone</td>
+                            <td>prefectures</td>
+                            <td>Municipality</td>
+                            <td>Street address/apartment name</td>
                         </tr>
                         <tr>
                             <!-- <th>名前</th> -->
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
+                            <td>edit</td>
+                            <td>delete</td>
+                            <td>name</td>
+                            <td>email</td>
+                            <td>telephone</td>
+                            <td>prefectures</td>
+                            <td>Municipality</td>
+                            <td>Street address/apartment name</td>
                         </tr>
                         <tr>
                             <!-- <th>メールアドレス</th> -->
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
+                            <td>edit</td>
+                            <td>delete</td>
+                            <td>name</td>
+                            <td>email</td>
+                            <td>telephone</td>
+                            <td>prefectures</td>
+                            <td>Municipality</td>
+                            <td>Street address/apartment name</td>
                         </tr>
                         <tr>
                             <!-- <th>電話番号</th> -->
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
+                            <td>edit</td>
+                            <td>delete</td>
+                            <td>name</td>
+                            <td>email</td>
+                            <td>telephone</td>
+                            <td>prefectures</td>
+                            <td>Municipality</td>
+                            <td>Street address/apartment name</td>
                         </tr>
                         <tr>
                             <!-- <th>都道府県</th> -->
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
+                            <td>edit</td>
+                            <td>delete</td>
+                            <td>name</td>
+                            <td>email</td>
+                            <td>telephone</td>
+                            <td>prefectures</td>
+                            <td>Municipality</td>
+                            <td>Street address/apartment name</td>
                         </tr>
                         <tr>
                             <!-- <th>市町村</th> -->
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
+                            <td>edit</td>
+                            <td>delete</td>
+                            <td>name</td>
+                            <td>email</td>
+                            <td>telephone</td>
+                            <td>prefectures</td>
+                            <td>Municipality</td>
+                            <td>Street address/apartment name</td>
                         </tr>
                         <tr>
                             <!-- <th>番地・アパート名</th> -->
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
-                            <td>テキストが入ります</td>
+                            <td>edit</td>
+                            <td>delete</td>
+                            <td>name</td>
+                            <td>email</td>
+                            <td>telephone</td>
+                            <td>prefectures</td>
+                            <td>Municipality</td>
+                            <td>Street address/apartment name</td>
                         </tr>
                     </tbody>
                 </table>
