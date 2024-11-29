@@ -60,13 +60,14 @@
             $('.hamburger-menu').on('click', function () {
                 // $('.toggleClass').slideToggle(500)
                 $('.sidebar').toggleClass('shrunk')
-                $('.hamburger-menu').toggleClass('.hamburger-menu-shrunk')
+                $('.hamburger-menu').toggleClass('hamburger-menu-shrunk')
                 $('.sidebar-home,.sidebar-register').toggle()
-                // $('.side-button').toggle()
+                $('.side-button').toggle()
+                $('.main-part').toggleClass('main-part-shrunk')
                 // $('.hamburger').animate({ "marginRight": "100px"})
             });
             $('.hamburger-menu-shrunk').on('click', function () {
-                $('.hamburger-menu-shrunk').toggleClass('.hamburger-menu-shrunk')
+                $('.hamburger-menu-shrunk').toggleClass('hamburger-menu')
             });
          });
     </script> 
