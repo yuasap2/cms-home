@@ -468,7 +468,7 @@
   }
 
 
-  .sidebar .sidebar-home-icon, .sidebar .sidebar-home {
+  /* .sidebar .sidebar-home-icon, .sidebar .sidebar-home {
     color: #fff;
     text-decoration: none; 
     padding-left: 5px;
@@ -488,6 +488,24 @@
     text-indent:100%;
 	  white-space:nowrap;
 	  overflow:hidden;
+  } */
+
+  .sidebar-icon {
+    color: #fff;
+    text-decoration: none; 
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .sidebar-icon .shrunk {
+    text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+
+  .fa-solid fa-house,.fa-regular fa-address-card,.fa-solid fa-pen{
+    
   }
 
 /* ハンバーガー */
@@ -577,9 +595,28 @@
 /* 表 */
 table th,td{
   border:1px solid #333;
-  padding: 16px
+  padding: 16px;
+  margin: 10px;
 }
 
 .account-name{
- padding: 10px
+ padding: 10px;
+}
+
+.table-part {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  width: calc(100% - 160px);
+  font-style: normal;
+  margin-left: auto;
+}
+
+.table-part-shrunk {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  width: calc(100% - 90px);
+  font-style: normal;
+  margin-left: auto;
 }
