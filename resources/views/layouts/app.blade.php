@@ -53,8 +53,8 @@
                             <li class="side-button"><i class="fa-regular fa-address-card"></i>　会員登録</li>
                         </a>
 
-                         <!-- アイコン  会員一覧-->
-                         <a href="{{ route('account') }}" class="sidebar-icon">
+                            <!-- アイコン  会員一覧-->
+                        <a href="{{ route('account') }}" class="sidebar-icon">
                             <li class="side-button"><i class="fa-solid fa-pen"></i>　会員一覧</li>
                         </a>
                      </ul>
