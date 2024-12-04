@@ -398,6 +398,7 @@
   font-size: 24px;
   color: #4CAF93;
   padding: 30px;
+  text-align: center;
   /* text-align: center; */
 }
 
@@ -411,6 +412,8 @@
   margin-right: auto;
   text-align: left;
   padding: 15px 31px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 
@@ -504,6 +507,8 @@
     overflow:hidden;
   }
 
+
+
 /* ハンバーガー */
  .hamburger {
     -webkit-box-flex: 0;
@@ -596,7 +601,7 @@ table th,td{
 }
 
 .account-name{
- padding: 10px;
+ padding: 40px;
 }
 
 .table-part {
@@ -616,3 +621,4 @@ table th,td{
   font-style: normal;
   margin-left: auto;
 }
+

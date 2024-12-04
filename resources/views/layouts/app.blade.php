@@ -45,17 +45,23 @@
 
                         <!-- アイコン ホーム -->
                         <a href="{{ route('home') }}" class="sidebar-icon">
-                            <li class="side-button"><i class="fa-solid fa-house"></i>　HOME</li>
+                            <li class="side-button"><i class="fa-solid fa-house"></i>
+                                <div class = sidebar_menu>　HOME</div>
+                            </li>
                         </a>
                         
                         <!-- アイコン 会員登録 -->
                         <a href="{{ route('member') }}" class="sidebar-icon">
-                            <li class="side-button"><i class="fa-regular fa-address-card"></i>　会員登録</li>
+                            <li class="side-button"><i class="fa-regular fa-address-card"></i>
+                            <div class = sidebar_menu>　会員登録</div>
+                            </li>
                         </a>
 
                             <!-- アイコン  会員一覧-->
                         <a href="{{ route('account') }}" class="sidebar-icon">
-                            <li class="side-button"><i class="fa-solid fa-pen"></i>　会員一覧</li>
+                            <li class="side-button"><i class="fa-solid fa-pen"></i>
+                            <div class = sidebar_menu>　会員一覧</div>
+                            </li>
                         </a>
                      </ul>
                        
