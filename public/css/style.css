@@ -463,11 +463,13 @@
     border-bottom: 1px solid #ffffff;
     padding: 20px 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .side-button i {
     padding-left: 7px;
+     /* アイコンとテキストがずれていたので 教えて頂いたalign-items: flex-end;で直った */
+     /* margin-bottom: 1px; */
   }
 
   .side-button .shrunk{

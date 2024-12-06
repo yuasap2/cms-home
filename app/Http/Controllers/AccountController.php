@@ -27,4 +27,8 @@ class AccountController extends Controller
 use App\Model\User;
 
  //データベースからユーザ情報を取得しViewに渡す
+ public function index()
+ {
+    
+ }
 
