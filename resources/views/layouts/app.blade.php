@@ -31,18 +31,17 @@
 
        <main>
             
-         <div class="sidebar">
-                <header></header>     
-                    <ul>
-                        <ul>
+         <div class="sidebar">  
                         <!-- ハンバーガー  -->
                         <button type="button" class="hamburger">
-                        <button class="hamburger-menu" id="js-hamburger-menu">
-                            <span class="hamburger-menu__bar"></span>
-                            <span class="hamburger-menu__bar"></span>
-                            <span class="hamburger-menu__bar"></span>
+                            <button class="hamburger-menu" id="js-hamburger-menu">
+                                <span class="hamburger-menu__bar"></span>
+                                <span class="hamburger-menu__bar"></span>
+                                <span class="hamburger-menu__bar"></span>
+                            </button>
                         </button>
 
+                    <ul>
                         <!-- アイコン ホーム -->
                         <a href="{{ route('home') }}" class="sidebar-icon">
                             <li class="side-button"><i class="fa-solid fa-house"></i>
@@ -63,9 +62,7 @@
                             <div class = sidebar_menu>　会員一覧</div>
                             </li>
                         </a>
-                     </ul>
-                       
-                    </ul>
+                   </ul>
             </div> 
             <script>
                 $(function () {

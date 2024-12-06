@@ -23,3 +23,8 @@ class AccountController extends Controller
         return view('account');
     }
 }
+
+use App\Model\User;
+
+ //データベースからユーザ情報を取得しViewに渡す
+

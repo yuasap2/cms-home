@@ -446,16 +446,14 @@
 
 .sidebar ul {
     list-style: none;
-    
-
 }
 
-.sidebar ul li {
+/* .sidebar ul li {
     padding: 20px 0 20px 0;
     display: flex;
     align-items: center;
 
-}
+} */
 
   /* .sidebar .hamburger {
     width: 80px;
@@ -463,7 +461,13 @@
  
   .side-button {
     border-bottom: 1px solid #ffffff;
-    padding: 15px 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .side-button i {
+    padding-left: 7px;
   }
 
   .side-button .shrunk{
