@@ -33,7 +33,7 @@ Route::post('/contact/thanks',[ContactsController::class,'send'])->name('contact
 
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
