@@ -33,14 +33,9 @@ Route::post('/contact/thanks',[ContactsController::class,'send'])->name('contact
 
 
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
-// Route::get('/logout', [App\Http\Controllers\HomeController::class, 'index'])->name('logout');
 Route::post('/logout',[App\Http\Controllers\LogoutController::class,'logout'])->name('logout');
 Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account');
-
-// Route::get('auth/login',[loginController::class,'login'])->name('login');
-// Route::post('/home',[loginController::class,''])->name('home');
-
