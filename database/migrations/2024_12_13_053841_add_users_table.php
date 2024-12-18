@@ -14,9 +14,19 @@ class AddUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('postal_code');
-            $table->string('address');
-            $table->string('phone_number');
+            
+            if(false === Schema::hasColumn($table->getTable(),'postal_code')) {
+                $table->string('postal_code')->nullable()->after('password');
+            }
+
+            if(false === Schema::hasColumn($table->getTable(),'address')) {
+                $table->string('address')->nullable()->after('postal_code');
+            }
+
+            
+            if(false === Schema::hasColumn($table->getTable(),'phone_number')) {
+                $table->string('phone_number')->nullable()->after('address');
+            }
         });
     }
 
@@ -27,8 +37,6 @@ class AddUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            Schema::dropIfExists('users');
-        });
+        // 
     }
 }

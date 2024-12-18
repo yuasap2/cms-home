@@ -4,6 +4,8 @@
  <body>
            <div class= "table-part">
                 <header class= "account-name">アカウント一覧</header>
+                <a href="" class="btn btn-solid"><span>新規登録</span></a>
+
                 <table>
                 <!--  テーブルのヘッダーはこの中に記述 
                  <thead>というタグで囲むのが一般的  -->
