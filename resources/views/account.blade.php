@@ -35,15 +35,15 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->postal_code }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->telephone }}</td>
+                            <td>{{ $user->prefectures }}</td>
+                            <td>{{ $user->Municipality }}</td>
+                            <td>{{ $user->apartment_name }}</td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
-                <table>
+                <!-- <table>
                     <tbody>
                         <tr>
                             <th>編集</th>
@@ -56,7 +56,6 @@
                             <th>番地・アパート名</th>
                         </tr>
                         <tr>
-                            <!-- <th>削除</th> -->
                             <td>edit</td>
                             <td>delete</td>
                             <td>name</td>
@@ -67,7 +66,6 @@
                             <td>Street address/apartment name</td>
                         </tr>
                         <tr>
-                            <!-- <th>名前</th> -->
                             <td>edit</td>
                             <td>delete</td>
                             <td>name</td>
@@ -78,7 +76,6 @@
                             <td>Street address/apartment name</td>
                         </tr>
                         <tr>
-                            <!-- <th>メールアドレス</th> -->
                             <td>edit</td>
                             <td>delete</td>
                             <td>name</td>
@@ -89,7 +86,6 @@
                             <td>Street address/apartment name</td>
                         </tr>
                         <tr>
-                            <!-- <th>電話番号</th> -->
                             <td>edit</td>
                             <td>delete</td>
                             <td>name</td>
@@ -100,7 +96,6 @@
                             <td>Street address/apartment name</td>
                         </tr>
                         <tr>
-                            <!-- <th>都道府県</th> -->
                             <td>edit</td>
                             <td>delete</td>
                             <td>name</td>
@@ -111,7 +106,6 @@
                             <td>Street address/apartment name</td>
                         </tr>
                         <tr>
-                            <!-- <th>市町村</th> -->
                             <td>edit</td>
                             <td>delete</td>
                             <td>name</td>
@@ -122,7 +116,6 @@
                             <td>Street address/apartment name</td>
                         </tr>
                         <tr>
-                            <!-- <th>番地・アパート名</th> -->
                             <td>edit</td>
                             <td>delete</td>
                             <td>name</td>
@@ -133,7 +126,7 @@
                             <td>Street address/apartment name</td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
                                 
             </div>
         </body>
