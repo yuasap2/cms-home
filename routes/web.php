@@ -6,6 +6,7 @@ use App\Http\Controllers\TestController;
 
 
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +36,16 @@ Route::post('/contact/thanks',[ContactsController::class,'send'])->name('contact
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
 Route::post('/logout',[App\Http\Controllers\LogoutController::class,'logout'])->name('logout');
 Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account');
+// Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('register');
+Route::get('/new_registration', [App\Http\Controllers\RegistrationController::class, 'new_registration'])->name('new_registration');
+
+// 編集
+Route::get('/users/{user}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+// 削除
+Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
+
+Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');

@@ -14,11 +14,20 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create('ja_JP');
+        
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
+            'member_name' => $faker->name,
+            'furigana' => $faker->kanaName,
+            'email' => $faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('password'),
+            'phone_number' => $faker->numerify('0##########'), 
+            'postal_code' => $faker->postcode,
+            'prefecture' => $faker->prefecture,
+            'city' => $faker->city,
+            'address' => $faker->streetAddress,
+            'remarks' => $faker->optional()->realText(255), 
             'remember_token' => Str::random(10),
         ];
     }

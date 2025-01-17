@@ -617,6 +617,9 @@ table th,td{
   width: calc(100% - 160px);
   font-style: normal;
   margin-left: auto;
+  max-width: 1000px;
+ 
+
 }
 
 .table-part-shrunk {
@@ -630,21 +633,88 @@ table th,td{
 
 
 /* 新規登録 */
-a.btn-solid {
+.btn-solid {
   color: #fff;
-  border-top: 4px solid #48ecc4;
+  /* border-top: 4px solid #48ecc4;
   border-right: 4px solid #0a5f4a;
   border-bottom: 4px solid #0f745b;
-  border-left: 4px solid #8cf9de;
-  border-radius: 0;
+  border-left: 4px solid #8cf9de; */
+  border-radius: 10px;
   background: #11a37f;
+  padding: 8px 16px;
+  margin: 10px;
+  text-decoration: none;
+  display: inline-block;
+  float: right;
 }
 
-a.btn-solid:hover {
+.btn-solid:hover {
   color: #fff;
-  border-top: 4px solid #0f745b;
+  background: #c7efe5;
+  /* border-top: 4px solid #0f745b;
   border-right: 4px solid #8cf9de;
   border-bottom: 4px solid #48ecc4;
-  border-left: 4px solid #0a5f4a;
+  border-left: 4px solid #0a5f4a; */
 }
 
+.registration {
+  font-weight: bold;
+}
+
+.fa-pen-to-square {
+  color: #979898
+}
+
+.fa-trash {
+  color: #D92323;
+}
+
+.registration {
+  margin: 5px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.fill {
+  margin: 10px;
+}
+
+/* 編集 */
+.container {
+  width: 50%; /* フォーム全体の幅を調整 */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+label {
+  width: 150px; /* ラベルの固定幅 */
+  text-align: right; /* ラベルを右寄せ */
+  margin-right: 10px; /* ラベルと入力欄の間の余白 */
+}
+
+input {
+  flex: 1; /* 入力欄を残りのスペースに広げる */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.update-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-button:hover {
+  background-color: #45a049;
+}
