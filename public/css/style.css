@@ -633,6 +633,11 @@ table th,td{
 
 
 /* 新規登録 */
+.new-register {
+    margin-top: 20px; /* テーブルとの間隔を調整 */
+    text-align: right; /* ボタンを右揃え */
+}
+
 .btn-solid {
   color: #fff;
   /* border-top: 4px solid #48ecc4;
@@ -645,7 +650,6 @@ table th,td{
   margin: 10px;
   text-decoration: none;
   display: inline-block;
-  float: right;
 }
 
 .btn-solid:hover {
@@ -655,10 +659,6 @@ table th,td{
   border-right: 4px solid #8cf9de;
   border-bottom: 4px solid #48ecc4;
   border-left: 4px solid #0a5f4a; */
-}
-
-.registration {
-  font-weight: bold;
 }
 
 .fa-pen-to-square {
@@ -717,4 +717,17 @@ input {
 
 .update-button:hover {
   background-color: #45a049;
+}
+
+/* 削除ボタン */
+.delete-button {
+  background: none;
+  border: none;
+  color: #ff4d4d; /* 赤色 */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.delete-button:hover {
+  color: #ff0000; /* マウスホバー時に濃い赤に */
 }

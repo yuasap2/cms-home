@@ -43,9 +43,15 @@ Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('register');
 Route::get('/new_registration', [App\Http\Controllers\RegistrationController::class, 'new_registration'])->name('new_registration');
 
+
+Route::resource('users', UserController::class);
 // 編集
 Route::get('/users/{user}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
 // 削除
 Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
 
 Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
+
+Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+
+

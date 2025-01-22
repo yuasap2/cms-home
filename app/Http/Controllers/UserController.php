@@ -8,45 +8,61 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    // ユーザー一覧を表示
+    public function index()
+    {
+        // ユーザー情報を全件取得
+        $users = User::all();
+
+        // ビューにデータを渡して返す
+        return view('users.index', compact('users'));
+    }
+
+        // ユーザー編集ページを表示
         public function edit(User $user)
     {
         return view('users.edit', compact('user'));
     }
 
+        // ユーザー削除
         public function destroy(User $user)
     {
         $user->delete();
+
+        // 削除後に users.index へリダイレクト
         return redirect()->route('users.index')->with('success', 'ユーザーを削除しました。');
     }
 
-    public function update(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
+    
+    // dd($e);
+       
+       
 
-        // バリデーションとデータ更新処理
-        $validatedData = $request->validate([
-            'member_name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone_number' => 'required|string|max:15',
-            'prefecture' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-        ]);
+        // ユーザー情報を更新
+        public function update(Request $request, $id)
+        {
+            $user = User::findOrFail($id);
 
-        try {
-            $user->update([
-                'name' => $validateData['member_name'],
-                'email' => $validateData['email'],
-                'phone_number' => $validateData['phone_number'],
-                'prefecture' => $validateData['prefecture'],
-                'city' => $validateData['city'],
-                'address' => $validateData['address']
+            // バリデーションとデータ更新処理
+            $validateData = $request->validate([
+                'member_name' => 'required|string|max:255',
+                'email' => 'required|email|max:255',
+                'phone_number' => 'required|string|max:15',
+                'prefecture' => 'required|string|max:255',
+                'city' => 'required|string|max:255',
+                'address' => 'required|string|max:255',
             ]);
 
-            return redirect()->route('users.edit', $id)->with('success', 'ユーザー情報が更新されました。');
-        } catch (\Exception $e) {
-            return redirect()->route('users.edit', $id)->with('error', 'ユーザー情報が更新に失敗しました。');
+            try {
+                // データの更新
+                $user->update($validateData);
+
+                // 更新後に一覧ページにリダイレクト
+                return redirect()->route('users.index')->with('success', 'ユーザー情報が更新されました。');
+            } catch (\Exception $e) {
+                // エラーログを記録し、エラーメッセージを返す
+                \Log::error('ユーザー情報の更新エラー: ' . $e->getMessage());
+            return redirect()->route('users.edit', $id)->with('error', 'ユーザー情報の更新に失敗しました。');
         }
     }
-
 }

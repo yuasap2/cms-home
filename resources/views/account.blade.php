@@ -4,7 +4,11 @@
  <body>
            <div class= "table-part">
                 <header class= "account-name">アカウント一覧</header>
-                <a href="new_registration" class="btn-solid"><span class="registration">新規登録</span></a>
+                <div class="new-register">
+                    <a href="new_registration" class="btn-solid">
+                        <span class="registration">新規登録</span>
+                    </a>
+                </div>
 
             
                 <table>
@@ -32,15 +36,20 @@
                          <!-- {{-- <tr> => テーブルロー => 1行分のデータを表す --}} -->
                         <tr>
                             <!-- {{-- <td> => テーブルデータ => 1セル分のデータを表す --}} -->
-                            <td><a href="{{ route('users.edit' , $user->id) }}"  onclick="return.confirm('編集しますか？');">
+                            <td><a href="{{ route('users.edit' , $user->id) }}"  onclick="return confirm('編集しますか？');">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </td>
-                            <td><a href="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" onclick="return.confirm('削除しますか？');"></button>
-                                <i class="fa-solid fa-trash"></i>
+                            
+                            <td>
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="delete-button" onclick="return confirm('削除しますか？');">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
                             </td>
+                            
                             <td>{{ $user->member_name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->phone_number }}</td>
