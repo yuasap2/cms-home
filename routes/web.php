@@ -7,6 +7,7 @@ use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegistrationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,8 +42,10 @@ Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->
 Route::post('/logout',[App\Http\Controllers\LogoutController::class,'logout'])->name('logout');
 Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account');
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('register');
+// フォーム表示用
 Route::get('/new_registration', [App\Http\Controllers\RegistrationController::class, 'new_registration'])->name('new_registration');
-
+// フォーム送信処理用
+Route::post('/new_registration', [App\Http\Controllers\RegistrationController::class, 'store'])->name('new_registration.store');
 
 Route::resource('users', UserController::class);
 // 編集

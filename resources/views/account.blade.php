@@ -21,11 +21,13 @@
                             <th>編集</th>
                             <th>削除</th>
                             <th>名前</th>
+                            <th>フリガナ</th>
                             <th>メールアドレス</th>
                             <th>電話番号</th>
                             <th>都道府県</th>
                             <th>市町村</th>
                             <th>番地・アパート名</th>
+                            <th>備考欄</th>
                         </tr>
                     </thead>
                     <!-- {{-- テーブルのボディ部分はこの中に記述 --}}
@@ -51,11 +53,13 @@
                             </td>
                             
                             <td>{{ $user->member_name }}</td>
+                            <td>{{ $user->furigana }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->phone_number }}</td>
                             <td>{{ $user->prefecture }}</td>
                             <td>{{ $user->city }}</td>
                             <td>{{ $user->address }}</td>
+                            <td>{{ $user->remarks}}</td>
                         </tr>
                     @endforeach
                     </tbody>

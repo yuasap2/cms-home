@@ -44,7 +44,7 @@ class UserController extends Controller
             $user = User::findOrFail($id);
 
             // バリデーションとデータ更新処理
-            $validateData = $request->validate([
+            $validatedData = $request->validate([
                 'member_name' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
                 'phone_number' => 'required|string|max:15',
@@ -55,7 +55,7 @@ class UserController extends Controller
 
             try {
                 // データの更新
-                $user->update($validateData);
+                $user->update($validatedData);
 
                 // 更新後に一覧ページにリダイレクト
                 return redirect()->route('users.index')->with('success', 'ユーザー情報が更新されました。');

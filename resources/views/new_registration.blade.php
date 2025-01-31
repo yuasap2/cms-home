@@ -6,7 +6,7 @@
             <div class = "main-part">
               <header>アカウント一覧</header>
                 <div class = "registration">
-                    <form method="post">
+                    <form method="post" action="{{ route('new_registration.store') }}">
                         @csrf   
                         <p class = "fill">
                             会員名
@@ -15,7 +15,7 @@
 
                         <p class = "fill">
                             フリガナ
-                            <input type = "text" name="kana_name" class="input-field" />
+                            <input type = "text" name="furigana" class="input-field" />
                         </p>
 
                         <p class = "fill">
@@ -25,7 +25,7 @@
                     
                         <p class = "fill">                   
                             パスワード
-                            <input type="text" name="postal_code" class="input-field" />
+                            <input type="text" name="password" class="input-field" />
                         </p>
                         
                         <p class = "fill">
