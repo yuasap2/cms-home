@@ -199,6 +199,12 @@
     padding-right: 1em;
 }
 
+.error-message-create {
+  color :#ff0000;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 .wrap {
     display:flex;
     align-items: center;
@@ -675,9 +681,67 @@ table th,td{
   font-weight: bold;
 }
 
-.fill {
-  margin: 10px;
+/* 新規登録 */
+.create {
+  font-family: "Noto Sans JP";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  width: calc(100% - 150px);
+  font-style: normal;
+  margin-left: auto;
 }
+
+.create-shrunk {
+  font-family: "Noto Sans JP";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  width: calc(100% - 80px);
+  font-style: normal;
+  margin-left: auto;
+}
+
+
+.fill{
+  display:flex;
+  margin: 5px;
+
+}
+
+.postal-code-group {
+  margin: 5px;
+}
+
+.input-field::placeholder {
+  opacity: 0.5;
+}
+
+.input-field {
+  margin: 5px;
+  font-weight: bold;
+
+}
+
+.required{
+	color: #fff;
+	background: #4CAF93;
+  margin: 10px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.new_registration_button{
+  color: #fff;
+  background-color: #a8a7a7;
+}
+
+#prefecture {
+  color: rgba(0, 0, 0, 0.5); /* 初期状態を半透明 */
+  margin: 5px;
+}
+#prefecture option {
+  color: black; /* 選択肢は通常の色 */
+}
+
 
 /* 編集 */
 .container {
@@ -730,4 +794,8 @@ input {
 
 .delete-button:hover {
   color: #ff0000; /* マウスホバー時に濃い赤に */
+}
+
+.accounts_list {
+  padding: 10px;
 }

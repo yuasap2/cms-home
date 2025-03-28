@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserFactory extends Factory
 {
@@ -18,11 +20,11 @@ class UserFactory extends Factory
         
         return [
             'member_name' => $faker->name,
-            'furigana' => $faker->kanaName,
+            'furigana' => $faker->lastNameKana . ' ' . $faker->firstNameKana,
             'email' => $faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
-            'phone_number' => $faker->numerify('0##########'), 
+            'password' => Hash::make('password'), 
+            'phone_number' => $faker->regexify('0[789]0-[0-9]{4}-[0-9]{4}'),
             'postal_code' => $faker->postcode,
             'prefecture' => $faker->prefecture,
             'city' => $faker->city,

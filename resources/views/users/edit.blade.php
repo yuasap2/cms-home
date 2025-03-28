@@ -35,6 +35,15 @@
             </div>
 
             <div class="form-group">
+                <label for="postal_code">郵便番号</label>
+                <input type="text" name="postal_code" id="postal_code" class="form-control" value="{{ $user->postal_code }}"
+                       value="{{ old('postal_code', $user->postal_code) }}">
+                       @error('phone_number')
+                            <div class="text-danger">{{ $message }}</div>
+                       @enderror
+            </div>
+
+            <div class="form-group">
                 <label for="prefecture">都道府県</label>
                 <input type="text" name="prefecture" id="prefecture" class="form-control" value="{{ $user->prefecture }}"
                        value="{{ old('prefecture', $user->prefecture) }}">

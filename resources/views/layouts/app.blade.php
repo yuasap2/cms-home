@@ -73,6 +73,7 @@
                         $('.sidebar-home,.sidebar-register').toggle()
                         $('.side-button').toggle()
                         $('.main-part').toggleClass('main-part-shrunk')
+                        $('.create').toggleClass('create-shrunk')
                         $('.table-part').toggleClass('table-part-shrunk')
                         // $('.hamburger').animate({ "marginRight": "100px"})
                     });
