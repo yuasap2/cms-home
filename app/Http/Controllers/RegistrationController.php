@@ -62,6 +62,8 @@ class RegistrationController extends Controller
          'address.required' => '※番号・アパート名は必須です。',
         ]);
 
+           dd($request->all());
+
         // 電話番号を結合
         $phone_number = implode('-', array_filter([
             $request->input('phone_part1'),
@@ -90,9 +92,9 @@ class RegistrationController extends Controller
                 ->withInput();
         }
         
-        \Log::info('結合後の電話番号: ' . $phone_number);
-        \Log::info('結合後の郵便番号: ' . $postal_code);
-
+        \Log::error('結合後の電話番号: ' . $phone_number);
+        \Log::error('結合後の郵便番号: ' . $postal_code);
+       
         try{
             // データの保存
            User::create([
