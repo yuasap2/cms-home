@@ -18,16 +18,16 @@
                     <!-- <tr> => テーブルロー => 1行分のデータを表す -->
                         <tr>
                         <!-- <th> => テーブルヘッダー => 1列分のデータを表す  -->
-                            <th>編集</th>
-                            <th>削除</th>
-                            <th>名前</th>
-                            <th>フリガナ</th>
-                            <th>メールアドレス</th>
-                            <th>電話番号</th>
-                            <th>都道府県</th>
-                            <th>市町村</th>
-                            <th>番地・アパート名</th>
-                            <th>備考欄</th>
+                            <th class = editTable>編集</th>
+                            <th class = delateTable>削除</th>
+                            <th class = nameTable>名前</th>
+                            <th class = huriganaTable>フリガナ</th>
+                            <th class = mailTable>メールアドレス</th>
+                            <th class = phoneTable>電話番号</th>
+                            <th class = prefecturesTable>都道府県</th>
+                            <th class = municipalityTable>市町村</th>
+                            <th class = addressTable>番地・アパート名</th>
+                            <th class = remarkTable>備考欄</th>
                         </tr>
                     </thead>
                     <!-- {{-- テーブルのボディ部分はこの中に記述 --}}

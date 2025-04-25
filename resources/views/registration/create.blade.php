@@ -17,53 +17,59 @@
     <form method="POST" action="{{ route('new_registration.store') }}">
         @csrf
             
+        <div class = "box">
             <p class = "fill">
                 <span class="required">必須</span>
-                会員名
-                    @if($errors->has('member_name'))
+                <span class="itemName">会員名</span>
+                @if($errors->has('member_name'))
                     <a class="error-message-create">{{ $errors->first('member_name')}}</a>
-                    @endif
+                @endif
             </p>
             <br>
-            <input type="text" name="member_name" class="input-field" maxlength="8" value="{{ old('member_name')}}" placeholder="太郎">
-           
+            <p class= "input-elea">
+              <input type="text" name="member_name" class="input-field" maxlength="8" value="{{ old('member_name')}}" placeholder="山田太郎">
+            </p>
          
             <p class = "fill">
                 <span class="required">必須</span>
-                フリガナ
+                <span class="itemName">フリガナ</span>
                 @if($errors->has('furigana'))
                    <a class="error-message-create">{{ $errors->first('furigana')}}</a>
                 @endif
             </p>
             <br>
-            <input type = "text" name="furigana" class="input-field" placeholder="タロウ" value="{{ old('furigana')}}"  />
+            <p class= "input-elea">
+            <input type = "text" name="furigana" class="input-field" placeholder="ヤマダタロウ" value="{{ old('furigana')}}"  />
             
             
             <p class = "fill">
                 <span class="required">必須</span>
-                メールアドレス
+                <span class="itemName"> メールアドレス</span>               
                 @if($errors->has('email'))
                    <a class="error-message-create">{{ $errors->first('email')}}</a>
                 @endif
             </p>
             <br>
-            <input type = "email"  name="email" class="input-field" placeholder="example@hoge.com" value="{{ old('email')}}"/>
-            
+            <p class= "input-elea">
+                <input type = "email"  name="email" class="input-field" placeholder="example@hoge.com" value="{{ old('email')}}"/>
+            </p>
                    
             <p class = "fill">
                 <span class="required">必須</span>            
-                パスワード
+                <span class="itemName">パスワード</span>               
                 @if($errors->has('password'))
                    <a class="error-message-create">{{ $errors->first('password')}}</a>
                 @endif
             </p>
             <br>
-            <input type="password" name="password" class="input-field" placeholder="password"/>
+            <p class= "input-elea">
+                <input type="password" name="password" class="input-field" placeholder="password"/>
+            </p>
            
                         
             <p class = "fill">
                 <span class="required">必須</span>
-                電話番号
+                <span class="itemName">電話番号</span>               
                 @if($errors->has('phone_part1'))
                     <a class="error-message-create">{{ $errors->first('phone_part1') }}</a>
                 @endif
@@ -75,35 +81,41 @@
                 @endif
             </p>
             <br>
-            <div class="phone_input_group">
-                <input type="text" id="phone_part1" name="phone_part1" class="input-field" placeholder="000" maxlength="3" value="{{ old('phone_part1') }}">
-                -
-                <input type="text" id="phone_part2" name="phone_part2" class="input-field" placeholder="0000" maxlength="4" value="{{ old('phone_part2') }}">
-                -
-                <input type="text" id="phone_part3" name="phone_part3" class="input-field" placeholder="0000" maxlength="4" value="{{ old('phone_part3') }}">
-            </div>
+            <p class= "input-elea">
+                <div class="phone_input_group">
+                    <input type="text" id="phone_part1" name="phone_part1" class="input-field" placeholder="000" maxlength="3" value="{{ old('phone_part1') }}">
+                    -
+                    <input type="text" id="phone_part2" name="phone_part2" class="input-field" placeholder="0000" maxlength="4" value="{{ old('phone_part2') }}">
+                    -
+                    <input type="text" id="phone_part3" name="phone_part3" class="input-field" placeholder="0000" maxlength="4" value="{{ old('phone_part3') }}">
+                </div>
+            </p>
            
             
-            <div class="postal-code-group">
+            <p class="fill">
                 <span class="required">必須</span>
-                郵便番号
+                <span class="itemName">郵便番号</span>
                 @if($errors->has('postal_part1'))
                     <a class="error-message-create">{{ $errors->first('postal_part1') }}</a>
                 @endif
                 @if($errors->has('postal_part2'))
                     <a class="error-message-create">{{ $errors->first('postal_part2') }}</a>
-                @endif
-                <br>
-                <input type="tel" id="postal_part1" name="postal_part1" class="input-field" placeholder="123" maxlength="3" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part1') }}" >
-                -
-                <input type="tel" id="postal_part2" name="postal_part2" class="input-field" placeholder="4567" maxlength="4" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part2') }}"  >
-               
-            </div>
+                @endif                
+            </p>
+            <br>
+            <p class= "input-elea">
+                <div class = "postal-code-group">
+                    <input type="tel" id="postal_part1" name="postal_part1" class="input-field" placeholder="123" maxlength="3" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part1') }}" >
+                    -
+                    <input type="tel" id="postal_part2" name="postal_part2" class="input-field" placeholder="4567" maxlength="4" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part2') }}"  >
+                </div>   
+            </p>
+           
 
 
             <p class = "fill">
                 <span class="required">必須</span>
-                都道府県
+                <span class="itemName">都道府県</span>
                 @if($errors->has('prefecture'))
                    <a class="error-message-create">{{ $errors->first('prefecture')}}</a>
                 @endif
@@ -121,49 +133,55 @@
                 ];
             @endphp           
 
-            <select id="prefecture" name="prefecture">
-                <option value="">都道府県名を選んで下さい</option>
-                @foreach($prefectures as $p)
-                    <option value="{{ $p }}" {{ (old('prefecture')??'') == $p ? 'selected' : '' }}>
-                        {{ $p }}
-                    </option>
-                @endforeach
-            </select>
-            
+              
+            <p class= "input-elea">
+                <select id="prefecture" name="prefecture" class="prefecture_elea">
+                    <option value="">都道府県名を選んで下さい</option>
+                    @foreach($prefectures as $p)
+                        <option value="{{ $p }}" {{ (old('prefecture')??'') == $p ? 'selected' : '' }}>
+                            {{ $p }}
+                        </option>
+                    @endforeach
+                </select>
+            </p>
 
             
             <p class = "fill">
                 <span class="required">必須</span>
-                市区町村
+                <span class="itemName">市区町村</span>
                 @if($errors->has('city'))
                         <a class="error-message-create">{{ $errors->first('city')}}</a>
                 @endif
 
             </p>
             <br>
-            <input type="text" name="city" class="input-field" placeholder="太郎" value="{{ old('city')}}" />
-                       
+            <p class= "input-elea">
+                <input type="text" name="city" class="input-field" placeholder="市区町村" value="{{ old('city')}}" />
+            </p>         
             
             <p class = "fill">
                 <span class="required">必須</span>
-                番号・アパート名
+                <span class="itemName">番号・アパート名</span>
                 @if($errors->has('address'))
                         <a class="error-message-create">{{ $errors->first('address')}}</a>
                 @endif
             </p>
             <br>
-            <input type="text" name="address" class="input-field"  placeholder="" value="{{ old('address')}}" />
-                       
+            <p class= "input-elea">
+                <input type="text" name="address" class="input-field"  placeholder="番号・アパート名" value="{{ old('address')}}" />
+            </p>          
 
             
             <p class = "fill">
-                備考欄
+                <span class="itemName">備考欄</span>
             </p>
             <br>
-            <textarea name="remarks" class="input-field">{{ old('remarks')}}</textarea>
+            <p class= "input-elea">
+                <textarea name="remarks" class="remarksColumn">{{ old('remarks')}}</textarea>
+            </p>
             <br>
-                
-                <button type="submit" class="new_registration_button">登録する</button>
+              <button type="submit" class="new_registration_button">登録する</button>
             </form>
+        </div>
 </div> 
 @endsection

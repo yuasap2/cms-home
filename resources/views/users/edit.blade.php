@@ -70,6 +70,15 @@
                        @enderror
             </div>
 
+            <div class="form-group">
+                <label for="remarks">備考欄</label>
+                <input type="text" name="remarks" id="remarks" class="form-control" value="{{ $user->remarks }}"
+                       value="{{ old('remarks', $user->remarks) }}">
+                       @error('address')
+                            <div class="text-danger">{{ $message }}</div>
+                       @enderror
+            </div>
+
 
 
 

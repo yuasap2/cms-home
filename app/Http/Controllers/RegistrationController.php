@@ -35,7 +35,7 @@ class RegistrationController extends Controller
             'phone_part3' => 'required|string|max:5|regex:/^\d{1,4}$/',
             'postal_part1' => 'required|string|max:3',
             'postal_part2' => 'required|string|max:4',
-            'postal_code' => 'required|string|max:7',
+            // 'postal_code' => 'required|string|max:7',
             'prefecture' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'address' => 'required|string|max:255',
@@ -62,7 +62,7 @@ class RegistrationController extends Controller
          'address.required' => '※番号・アパート名は必須です。',
         ]);
 
-           dd($request->all());
+        //    dd($request->all());
 
         // 電話番号を結合
         $phone_number = implode('-', array_filter([
