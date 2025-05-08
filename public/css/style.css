@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
 }
-@media screen and(max-width:480px) {
+@media screen and (max-width:480px) {
     .Form-Item{
         padding-left: 14px;
         padding-right: 14px;
@@ -38,7 +38,7 @@
     font-size: 18px;
 }
 
-@media screen and(max-width:480px){
+@media screen and (max-width:480px){
     .Form-Item-Label{
         max-width: inherit;
         display: flex;
@@ -53,7 +53,7 @@
     margin-bottom: auto;
 } 
 
-@media screen and(max-width:480px){
+@media screen and (max-width:480px){
     .Form-Item-Label.isMsg{
         margin-top: 0;
     } 
@@ -72,7 +72,7 @@
     font-size: 14px;
 }
 
-@media screen and(max-width: 480px){
+@media screen and (max-width: 480px){
     .Form-Item-Label-Required{
         border-radius: 4px;
         padding-top: 4px;
@@ -199,11 +199,7 @@
     padding-right: 1em;
 }
 
-.error-message-create {
-  color :#ff0000;
-  padding-left: 1em;
-  padding-right: 1em;
-}
+
 
 .wrap {
     display:flex;
@@ -234,7 +230,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    width: 100%;
     letter-spacing: 0.05em;
     font-weight: bold;
     font-size: 18px;
@@ -874,7 +869,16 @@ table th,td{
 
 /* 都道府県名　 新規登録画面　create　new_registration　*/
 #prefecture option {
-  color: black; /* 選択肢は通常の色 */
+  color: rgba(0, 0, 0, 1); /* 選択肢は通常の色 */
+}
+
+
+/* エラーメッセージ　新規登録画面　create　new_registration */
+.error-message-create {
+  color :#ff0000;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 10px;
 }
 
 

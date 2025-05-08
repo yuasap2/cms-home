@@ -69,17 +69,12 @@
                         
             <p class = "fill">
                 <span class="required">必須</span>
-                <span class="itemName">電話番号</span>               
-                @if($errors->has('phone_part1'))
-                    <a class="error-message-create">{{ $errors->first('phone_part1') }}</a>
-                @endif
-                @if($errors->has('phone_part2'))
-                    <a class="error-message-create">{{ $errors->first('phone_part2') }}</a>
-                @endif
-                @if($errors->has('phone_part3'))
-                    <a class="error-message-create">{{ $errors->first('phone_part3') }}</a>
+                <span class="itemName">電話番号</span>
+                @if($errors->has('phone_number'))
+                     <div class="error-message-create">{{ $errors->first('phone_number') }}</div>
                 @endif
             </p>
+           
             <br>
             <p class= "input-elea">
                 <div class="phone_input_group">
@@ -95,11 +90,8 @@
             <p class="fill">
                 <span class="required">必須</span>
                 <span class="itemName">郵便番号</span>
-                @if($errors->has('postal_part1'))
-                    <a class="error-message-create">{{ $errors->first('postal_part1') }}</a>
-                @endif
-                @if($errors->has('postal_part2'))
-                    <a class="error-message-create">{{ $errors->first('postal_part2') }}</a>
+                @if($errors->has('postal_code'))
+                    <div>{{ $errors->first('postal_code') }}</div>
                 @endif                
             </p>
             <br>
