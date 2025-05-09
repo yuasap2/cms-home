@@ -22,21 +22,6 @@ class RegistrationController extends Controller
         // \Log::info('フォーム送信データ: ', $request->all());
         // dump($request->get('phone_part1') . '-' . $request->get('phone_part2'). '-' . 
         // $request->get('phone_part3'));
-
-        // 電話番号を結合
-        $phone_number = implode('-', array_filter([
-            $request->input('phone_part1'),
-            $request->input('phone_part2'),
-            $request->input('phone_part3')
-        ]));
-
-        // 郵便番号を結合
-        $postal_code = implode('-', array_filter([
-            $request->input('postal_part1'),
-            $request->input('postal_part2')
-        ]));
-
-        
         
         // dd($request->all());
         $validatedData = $request->validate([
@@ -44,11 +29,11 @@ class RegistrationController extends Controller
             'furigana' => 'required|string|max:50',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|string|min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',            
-            'phone_part1' => 'required|regex:/^\d{1,3}$/',
-            'phone_part2' => 'required|regex:/^\d{1,4}$/',
-            'phone_part3' => 'required|regex:/^\d{1,4}$/',
-            'postal_part1' => 'required|regex:/^\d{3}$/',
-            'postal_part2' => 'required|regex:/^\d{4}$/',
+            'phone_part1' => 'regex:/^\d{1,3}$/',
+            'phone_part2' => 'regex:/^\d{1,4}$/',
+            'phone_part3' => 'regex:/^\d{1,4}$/',
+            'postal_part1' => 'regex:/^\d{3}$/',
+            'postal_part2' => 'regex:/^\d{4}$/',
             // 'postal_code' => 'required|string|max:7',
             'prefecture' => 'required|string|max:255',
             'city' => 'required|string|max:255',
@@ -63,16 +48,6 @@ class RegistrationController extends Controller
          'email.max' => '※メールアドレスは :max文字以内でお願いします。',
          'password.required' => '※パスワードは必須です。',
          'password.regex' => '※パスワードは半角英数字で入力してください。',
-        //  'phone_part1.required' => '※電話番号（最初の3桁）は必須です。',
-        //  'phone_part1.regex' => '※電話番号は半角数字で入力してください。',
-        //  'phone_part2.required' => '※電話番号（中央4桁）は必須です。',
-        //  'phone_part2.regex' => '※電話番号は半角数字で入力してください。',
-        //  'phone_part3.required' => '※電話番号(最後の4桁)は必須です。',
-        //  'phone_part3.regex' => '※電話番号は半角数字で入力してください。',
-        //  'phone_number' => '※電話番号は必須です。',
-        //  'postal_part1.required' => '※郵便番号は半角数字3桁で入力してください。',
-        //  'postal_part2.required' => '※郵便番号は半角数字4桁で入力してください。',
-        //  'postal_code' => '※郵便番号は必須です。',
          'prefecture.required' => '※都道府県名は必須です。',
          'city.required' => '※市区町村名は必須です。',
          'address.required' => '※番号・アパート名は必須です。',
@@ -80,22 +55,41 @@ class RegistrationController extends Controller
 
         //    dd($request->all());
 
-   
+        // 電話番号と郵便番号が空かどうかチェック（まとめエラー）
+        $customErrors = [];
 
-        // ３つの枠を埋めないと電話番号入力エラー
-        if(empty($request->phone_part1) || empty($request->phone_part2) || empty($request->phone_part3)) {
+        if (
+            empty($request->input('phone_part1')) ||
+            empty($request->input('phone_part2')) ||
+            empty($request->input('phone_part3'))
+        ) {
+            $customErrors['phone_number'] = '※電話番号はすべて入力してください。';
+        }
+
+        if (
+            empty($request->input('postal_part1')) ||
+            empty($request->input('postal_part2'))
+        ) {
+            $customErrors['postal_code'] = '※郵便番号はすべて入力してください。';
+        }
+
+        if (!empty($customErrors)) {
             return redirect()->back()
-                ->withErrors(['phone_number' => '※電話番号は必須です。'])
+                ->withErrors($customErrors)
                 ->withInput();
         }
-            
 
-        // 郵便番号
-        if(empty($request->postal_part1) || empty($request->postal_part2)){
-            return redirect()->back()
-                ->withErrors(['postal_code' => '※郵便番号は必須です。'])
-                ->withInput();
-        }
+        // 電話番号を結合
+        $phone_number = $request->input('phone_part1') . '-' .
+                        $request->input('phone_part2') . '-' .
+                        $request->input('phone_part3');
+
+        // 郵便番号を結合
+        $postal_code =  $request->input('postal_part1') . '-' .
+                        $request->input('postal_part2');
+
+
+
         
         \Log::error('結合後の電話番号: ' . $phone_number);
         \Log::error('結合後の郵便番号: ' . $postal_code);

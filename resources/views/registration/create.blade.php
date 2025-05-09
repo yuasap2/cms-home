@@ -91,7 +91,7 @@
                 <span class="required">必須</span>
                 <span class="itemName">郵便番号</span>
                 @if($errors->has('postal_code'))
-                    <div>{{ $errors->first('postal_code') }}</div>
+                    <div class="error-message-create">{{ $errors->first('postal_code') }}</div>
                 @endif                
             </p>
             <br>
