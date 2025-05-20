@@ -71,7 +71,7 @@
                 <span class="required">必須</span>
                 <span class="itemName">電話番号</span>
                 @if($errors->has('phone_number'))
-                     <div class="error-message-create">{{ $errors->first('phone_number') }}</div>
+                     <a class="error-message-create">{{ $errors->first('phone_number') }}</a>
                 @endif
             </p>
            
@@ -91,7 +91,7 @@
                 <span class="required">必須</span>
                 <span class="itemName">郵便番号</span>
                 @if($errors->has('postal_code'))
-                    <div class="error-message-create">{{ $errors->first('postal_code') }}</div>
+                    <a class="error-message-create">{{ $errors->first('postal_code') }}</a>
                 @endif                
             </p>
             <br>

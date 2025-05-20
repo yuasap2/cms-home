@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class RegistrationController extends Controller
 {
@@ -24,11 +25,19 @@ class RegistrationController extends Controller
         // $request->get('phone_part3'));
         
         // dd($request->all());
-        $validatedData = $request->validate([
+
+         // 電話番号と郵便番号が空かどうかチェック（まとめエラー）
+
+     $validator = Validator::make($request->all(), [
             'member_name' => 'required|string|max:50',
             'furigana' => 'required|string|max:50',
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|string|min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',            
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/'
+            ],            
             'phone_part1' => 'regex:/^\d{1,3}$/',
             'phone_part2' => 'regex:/^\d{1,4}$/',
             'phone_part3' => 'regex:/^\d{1,4}$/',
@@ -53,31 +62,33 @@ class RegistrationController extends Controller
          'address.required' => '※番号・アパート名は必須です。',
         ]);
 
+         if (
+             empty($request->input('phone_part1')) ||
+             empty($request->input('phone_part2')) ||
+             empty($request->input('phone_part3'))
+         ) {
+            $validator->after(function ($validator) {
+                $validator->errors()->add('phone_number','※電話番号は必須項目です。');
+            });
+           }
+ 
+         if (
+             empty($request->input('postal_part1')) ||
+             empty($request->input('postal_part2'))
+         ) {
+            $validator->after(function ($validator) {
+                $validator->errors()->add('postal_code','※郵便番号は必須項目です。');
+         });
+        }
         //    dd($request->all());
 
-        // 電話番号と郵便番号が空かどうかチェック（まとめエラー）
-        $customErrors = [];
-
-        if (
-            empty($request->input('phone_part1')) ||
-            empty($request->input('phone_part2')) ||
-            empty($request->input('phone_part3'))
-        ) {
-            $customErrors['phone_number'] = '※電話番号はすべて入力してください。';
-        }
-
-        if (
-            empty($request->input('postal_part1')) ||
-            empty($request->input('postal_part2'))
-        ) {
-            $customErrors['postal_code'] = '※郵便番号はすべて入力してください。';
-        }
-
-        if (!empty($customErrors)) {
+        // 最終的なバリデーションチェック
+        if ($validator->fails()) {
             return redirect()->back()
-                ->withErrors($customErrors)
-                ->withInput();
+            ->withErrors($validator)
+            ->withInput();
         }
+       
 
         // 電話番号を結合
         $phone_number = $request->input('phone_part1') . '-' .
@@ -91,26 +102,26 @@ class RegistrationController extends Controller
 
 
         
-        \Log::error('結合後の電話番号: ' . $phone_number);
-        \Log::error('結合後の郵便番号: ' . $postal_code);
+        // \Log::error('結合後の電話番号: ' . $phone_number);
+        // \Log::error('結合後の郵便番号: ' . $postal_code);
        
         try{
             // データの保存
            User::create([
-               'member_name' => $validatedData['member_name'],
-               'furigana' => $validatedData['furigana']?? null,
-               'email' => $validatedData['email'],
-               'password' => bcrypt($validatedData['password']),//パスワードを暗号化
+               'member_name'  => $request->input('member_name'),
+               'furigana'     => $request->input('furigana'),
+               'email'        => $request->input('email'),
+               'password'     => bcrypt($request->input('password')),//パスワードを暗号化
                'phone_number' => $phone_number,
-               'postal_code' => $postal_code,
-               'prefecture' => $validatedData['prefecture']?? null,
-               'city' => $validatedData['city']?? null,
-               'address' => $validatedData['address']?? null,
-               'remarks' => $validatedData['remarks']?? null
+               'postal_code'  => $postal_code,
+               'prefecture'   => $request->input('prefecture'),
+               'city'         => $request->input('city'),
+               'address'      => $request->input('address'),
+               'remarks'      => $request->input('remarks'),
            ]);
 
             // 成功ログ
-            \Log::info('新規登録成功: ', $validatedData);
+            // \Log::info('新規登録成功: ', $validatedData);
 
             return redirect()->route('users.index')->with('success', '登録が完了しました！');
 
