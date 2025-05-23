@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app_login')
 
 @section('content')
 
 
-    <div class="container">
+    <div class="containerLogIn">
         <div class="row login-center">
             <div class="col-md-8">
                 <div class="card">

@@ -254,7 +254,7 @@
 
 
 /* login　↓ */
-.container {
+.containerLogIn {
     border-top: 20px solid #4CAF93;
     display: flex;
     align-items: center;
@@ -266,7 +266,7 @@
 /* justify-content-centerというクラスは思わぬ挙動を起こすため定義しないほうがいいです。 */
 .login-center{
     line-height: 250%;
-    margin-top: 40px;
+    margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
