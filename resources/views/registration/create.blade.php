@@ -78,11 +78,11 @@
             <br>
             <p class= "input-elea">
                 <div class="phone_input_group">
-                    <input type="text" id="phone_part1" name="phone_part1" class="input-field" placeholder="000" maxlength="3" value="{{ old('phone_part1') }}">
+                    <input type="text" id="phone_part1" name="phone_part1" class="input-field-number" placeholder="000" maxlength="3" value="{{ old('phone_part1') }}">
                     -
-                    <input type="text" id="phone_part2" name="phone_part2" class="input-field" placeholder="0000" maxlength="4" value="{{ old('phone_part2') }}">
+                    <input type="text" id="phone_part2" name="phone_part2" class="input-field-number" placeholder="0000" maxlength="4" value="{{ old('phone_part2') }}">
                     -
-                    <input type="text" id="phone_part3" name="phone_part3" class="input-field" placeholder="0000" maxlength="4" value="{{ old('phone_part3') }}">
+                    <input type="text" id="phone_part3" name="phone_part3" class="input-field-number" placeholder="0000" maxlength="4" value="{{ old('phone_part3') }}">
                 </div>
             </p>
            
@@ -97,13 +97,11 @@
             <br>
             <p class= "input-elea">
                 <div class = "postal-code-group">
-                    <input type="tel" id="postal_part1" name="postal_part1" class="input-field" placeholder="123" maxlength="3" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part1') }}" >
+                    <input type="tel" id="postal_part1" name="postal_part1" class="input-field-number" placeholder="123" maxlength="3" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part1') }}" >
                     -
-                    <input type="tel" id="postal_part2" name="postal_part2" class="input-field" placeholder="4567" maxlength="4" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part2') }}"  >
+                    <input type="tel" id="postal_part2" name="postal_part2" class="input-field-number" placeholder="4567" maxlength="4" pattern="\d*" autocomplete="postal-code" value="{{ old('postal_part2') }}"  >
                 </div>   
             </p>
-           
-
 
             <p class = "fill">
                 <span class="required">必須</span>

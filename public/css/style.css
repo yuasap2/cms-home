@@ -814,11 +814,13 @@ table th,td{
 .prefecture_elea {
   margin-left: 30px;
   height: 30px;
+  width: 97%;
+  background-color: #F7F7F7;
 }
 
 
 /*　枠　新規登録画面　create　new_registration */
-.input-field::placeholder {
+.input-field,.input-field-number,.prefecture_elea::placeholder {
   opacity: 0.5;
 }
 
@@ -826,6 +828,13 @@ table th,td{
 .input-field {
   margin: 5px;
   font-weight: bold;
+  width: 95%;
+}
+
+.input-field-number {
+  margin: 5px;
+  font-weight: bold;
+  width: 10%;
 }
 
 /* 備考欄枠　新規登録画面　create　new_registration */
@@ -863,7 +872,7 @@ table th,td{
 
 /* 都道府県名　 新規登録画面　create　new_registration*/
 #prefecture {
-  color: rgba(0, 0, 0, 0.5); /* 初期状態を半透明 */
+  color: rgba(0, 0, 0, 1); 
   margin: 5px;
 }
 
