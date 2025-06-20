@@ -62,20 +62,24 @@
                             <div class = sidebar_menu>　会員一覧</div>
                             </li>
                         </a>
+                         
+                            <!-- アイコン お問い合わせ一覧 -->
+                        <a href="{{ route('inquiry') }}" class="sidebar-icon">
+                            <li class="side-button"><i class="fa-regular fa-address-card"></i>
+                            <div class = sidebar_menu_inquiry>　お問い合わせ一覧</div>
+                            </li>
+                        </a>
                    </ul>
             </div> 
             <script>
                 $(function () {
                     $('.hamburger-menu').on('click', function () {
-                        // $('.toggleClass').slideToggle(500)
                         $('.sidebar').toggleClass('shrunk')
-                        $('.hamburger-menu').toggleClass('hamburger-menu-shrunk')
-                        $('.sidebar-home,.sidebar-register').toggle()
-                        $('.side-button').toggle()
+                        $(this).toggleClass('hamburger-menu-shrunk')
+                        $('.sidebar-home,.sidebar-register,.side-button').toggle()
                         $('.main-part').toggleClass('main-part-shrunk')
                         $('.create').toggleClass('create-shrunk')
                         $('.table-part').toggleClass('table-part-shrunk')
-                        // $('.hamburger').animate({ "marginRight": "100px"})
                     });
                     $('.hamburger-menu-shrunk').on('click', function () {
                         $('.hamburger-menu-shrunk').toggleClass('hamburger-menu')

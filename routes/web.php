@@ -8,6 +8,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\InquiryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +47,8 @@ Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])
 Route::get('/new_registration', [App\Http\Controllers\RegistrationController::class, 'new_registration'])->name('new_registration');
 // フォーム送信処理用
 Route::post('/new_registration', [App\Http\Controllers\RegistrationController::class, 'store'])->name('new_registration.store');
+Route::get('/inquiry', [App\Http\Controllers\InquiryController::class, 'index'])->name('inquiry');
+
 
 Route::resource('users', UserController::class);
 // 編集

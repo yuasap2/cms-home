@@ -357,7 +357,7 @@
 .content-top {
   box-sizing: border-box;
   background-color: #F7F7F7;
-  padding: 20px;
+  padding: 50px;
 }
 
 .content-home {
@@ -429,7 +429,7 @@
     position: fixed;
     left: 0;
     background-color: #4CAF93;
-    width: 150px;
+    width: 180px;
     height: 100%;
     text-align: left;
     list-style: none;
@@ -514,6 +514,15 @@
     overflow:hidden;
   }
 
+  .sidebar_menu {
+    font-size: 16px;
+  }
+
+  .sidebar_menu_inquiry {
+    font-size: 16px;
+    white-space: nowrap
+  }
+
 
 
 /* ハンバーガー */
@@ -544,7 +553,7 @@
     padding: 10px;
     cursor: pointer;
     text-align:right;
-    left: 70px;
+    left: 100px;
   }
 
   .hamburger-menu-shrunk {
