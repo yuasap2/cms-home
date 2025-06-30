@@ -60,4 +60,9 @@ Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update
 
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
+Route::get('/users/inquiry_edit', [InquiryController::class, 'index'])->name('users.index');
+Route::get('/users/{user}/edit', [InquiryController::class, 'edit'])->name('users.inquiry_edit');
+Route::put('/users/{id}', [InquiryController::class, 'update'])->name('users.update');
+Route::delete('/users/{user}', [InquiryController::class, 'destroy'])->name('users.destroy');
+
 
