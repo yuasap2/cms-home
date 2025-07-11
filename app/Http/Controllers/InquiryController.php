@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -11,8 +12,10 @@ class InquiryController extends Controller
 // ユーザー一覧を表示
     public function index()
     {
-        // ユーザー情報を全件取得
-        $users = User::all();
+        // // ユーザー情報を全件取得
+        // $users = User::all();
+        // 1ページ10件でページネーション
+        $users = User::paginate(10);
 
         // ビューにデータを渡して返す
         return view('inquiry', compact('users'));
@@ -21,7 +24,7 @@ class InquiryController extends Controller
         // ユーザー編集ページを表示
         public function edit(User $user)
     {
-        return view('users.inquiry_edit', compact('user'));
+        return view('users.edit', compact('user'));
     }
 
         // ユーザー削除

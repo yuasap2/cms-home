@@ -2,7 +2,6 @@
 @extends('layouts.app')
 
 @section('content')
- <body>
            <div class= "table-part">
                 <header class= "account-name">お問い合わせ一覧</header>
                 <!-- <div class="new-register">
@@ -23,15 +22,15 @@
                     <!-- <tr> => テーブルロー => 1行分のデータを表す -->
                         <tr>
                         <!-- <th> => テーブルヘッダー => 1列分のデータを表す  -->
-                            <th class = editTableInquiry>編集</th>
-                            <th class = statusTableInquiry>ステータス</th>
-                            <th class = companyTableInquiry>会社名</th>
-                            <th class = huriganaTableInquiry>氏名</th>
-                            <th class = phoneTableInquiry>電話番号</th>
-                            <th class = mailaddressTableInquiry>メールアドレス</th>
-                            <th class = birthTableInquiry>生年月日</th>
-                            <th class = genderTableInquiry>性別</th>
-                            <th class = jobTableInquiry>職業</th>
+                            <th class = "editTableInquiry">編集</th>
+                            <th class = "statusTableInquiry">ステータス</th>
+                            <th class = "companyTableInquiry">会社名</th>
+                            <th class = "huriganaTableInquiry">氏名</th>
+                            <th class = "phoneTableInquiry">電話番号</th>
+                            <th class = "mailaddressTableInquiry">メールアドレス</th>
+                            <th class = "birthTableInquiry">生年月日</th>
+                            <th class = "genderTableInquiry">性別</th>
+                            <th class = "jobTableInquiry">職業</th>
                          </tr>
                     </thead>
                     <!-- {{-- テーブルのボディ部分はこの中に記述 --}}
@@ -42,7 +41,7 @@
                          <!-- {{-- <tr> => テーブルロー => 1行分のデータを表す --}} -->
                         <tr>
                             <!-- {{-- <td> => テーブルデータ => 1セル分のデータを表す --}} -->
-                            <td><a href="{{ route('users.inquiry_edit' , $user->id) }}"  onclick="return confirm('編集しますか？');">
+                            <td><a href="{{ route('inquiry.edit' , $user->id) }}"  onclick="return confirm('編集しますか？');">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </td>
                             
@@ -56,10 +55,11 @@
                             <td>{{ $user->job }}</td>
                         </tr>
                     @endforeach
-                    </tbody>
+                    </tbody>  
                 </table>
-                
+                  <!-- ページネーションリンク -->
+                    <div class="pagenation-wrapper">
+                        {{ $users->links() }}
+                    </div>
             </div>
-        </body>
-
 @endsection

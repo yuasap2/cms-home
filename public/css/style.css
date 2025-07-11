@@ -954,4 +954,7 @@ input {
   color: #ff0000; /* マウスホバー時に濃い赤に */
 }
 
-
+.pagenation-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
