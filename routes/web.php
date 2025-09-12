@@ -20,9 +20,13 @@ use App\Http\Controllers\InquiryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/hello',function() {
+    return "Hello, Laravel!";
+});
 
 Route::get('/test/func',[TestController::class,'func']);
 
@@ -33,6 +37,9 @@ Route::post('/contact/confirm',[ContactsController::class,'confirm'])->name('con
 //送信完了ページ
 Route::post('/contact/thanks',[ContactsController::class,'send'])->name('contact.send');
 
+// 完了画面（GET）- コントローラからデータを渡す
+Route::get('/contact/thanks', [ContactsController::class, 'thanks'])->name('contact.thanks');
+
 
 
 
@@ -40,6 +47,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
+Route::get('/member', [App\Http\Controllers\UserController::class, 'index'])->name('member');
 Route::post('/logout',[App\Http\Controllers\LogoutController::class,'logout'])->name('logout');
 Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account');
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('register');
@@ -61,8 +69,8 @@ Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
 // Route::get('/inquiries/inquiry_edit', [InquiryController::class, 'index'])->name('users.index');
-Route::get('/inquiries/{user}/edit', [InquiryController::class, 'edit'])->name('inquiry.edit');
+Route::get('/inquiries',[InquiryController::class,'index'])->name('inquiry.index');
+Route::get('/inquiries/{inquiry}/edit', [InquiryController::class, 'edit'])->name('inquiry.edit');
 Route::put('/inquiries/{id}', [InquiryController::class, 'update'])->name('inquiry.update');
 Route::delete('/inquiries/{user}', [InquiryController::class, 'destroy'])->name('inquiry.destroy');
-
-
+// Route::get('/inquiries/seed', [InquiryController::class, 'runSeeder'])->name('inquiry.seed');

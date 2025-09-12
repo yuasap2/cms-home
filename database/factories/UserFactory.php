@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 class UserFactory extends Factory
 {
+    protected $model = \App\Models\User::class;
+    
     /**
      * Define the model's default state.
      *
@@ -20,7 +22,7 @@ class UserFactory extends Factory
         
         return [
             'member_name' => $faker->name,
-            'furigana' => $faker->lastNameKana . ' ' . $faker->firstNameKana,
+            'furigana' => $faker->kanaName,
             'email' => $faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => Hash::make('password'), 

@@ -9,57 +9,55 @@
                         <span class="registration">新規登録</span>
                     </a>
                 </div> -->
-
-
-
-
-
-            
-                <table>
+                <table class="inquiryThead">
                 <!--  テーブルのヘッダーはこの中に記述 
                  <thead>というタグで囲むのが一般的  -->
                     <thead>
                     <!-- <tr> => テーブルロー => 1行分のデータを表す -->
                         <tr>
                         <!-- <th> => テーブルヘッダー => 1列分のデータを表す  -->
-                            <th class = "editTableInquiry">編集</th>
-                            <th class = "statusTableInquiry">ステータス</th>
-                            <th class = "companyTableInquiry">会社名</th>
-                            <th class = "huriganaTableInquiry">氏名</th>
-                            <th class = "phoneTableInquiry">電話番号</th>
-                            <th class = "mailaddressTableInquiry">メールアドレス</th>
-                            <th class = "birthTableInquiry">生年月日</th>
-                            <th class = "genderTableInquiry">性別</th>
-                            <th class = "jobTableInquiry">職業</th>
+                            <th class = "itemInquiry">編集</th>
+                            <th class = "itemInquiry">ステータス</th>
+                            <th class = "itemInquiry">会社名</th>
+                            <th class = "itemInquiry">氏名</th>
+                            <th class = "itemInquiry">電話番号</th>
                          </tr>
                     </thead>
                     <!-- {{-- テーブルのボディ部分はこの中に記述 --}}
                     {{-- <tbody>というタグで囲むのが一般的 --}} -->
                     <tbody>
                     <!-- {{-- 3. Controller側から受け取ったデータをforeachで回して表示 --}} -->
-                    @foreach ($users as $user)
+                    @foreach ($inquiries as $inquiry)
                          <!-- {{-- <tr> => テーブルロー => 1行分のデータを表す --}} -->
                         <tr>
                             <!-- {{-- <td> => テーブルデータ => 1セル分のデータを表す --}} -->
-                            <td><a href="{{ route('inquiry.edit' , $user->id) }}"  onclick="return confirm('編集しますか？');">
+                            <td><a href="{{ route('inquiry.edit' , $inquiry->id) }}"  onclick="return confirm('編集しますか？');">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </td>
                             
-                            <td>{{ $user->status }}</td>
-                            <td>{{ $user->company }}</td>
-                            <td>{{ $user->member_name }}</td>
-                            <td>{{ $user->phone_number }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->date_of_birth }}</td>
-                            <td>{{ $user->gender }}</td>
-                            <td>{{ $user->job }}</td>
+                            <td>{{ $inquiry->status }}</td>
+                            <td>{{ $inquiry->company }}</td>
+                            <td>{{ $inquiry->member_name }}</td>
+                            <td>{{ $inquiry->phone_number }}</td>
                         </tr>
                     @endforeach
                     </tbody>  
                 </table>
                   <!-- ページネーションリンク -->
-                    <div class="pagenation-wrapper">
-                        {{ $users->links() }}
+                    <div class="pagination-wrapper">
+                        {{-- {{ $users->links() }} --}}
+                         {{-- 最初のページ --}}
+                        @if ($inquiries->onFirstPage())
+                            ≪ 前
+                        @else
+                            <a href="{{ $inquiries->previousPageUrl() }}">≪ 前</a>
+                        @endif
+
+                        @if ($inquiries->hasMorePages())
+                            <a href="{{ $inquiries->nextPageUrl() }}">次 ≫</a>
+                        @else
+                            次 ≫
+                        @endif
                     </div>
             </div>
 @endsection

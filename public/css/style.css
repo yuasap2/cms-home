@@ -287,8 +287,9 @@
 
 /* 入力欄 */
 .form-control {
-    width: 295px;
+    width: 100%;
     height: 30px;
+    background-color: #F7F7F7;
 }
 
 .is-invalid {
@@ -673,9 +674,71 @@ table th,td{
 }
 
 /* アカウント一覧 */
-.account-name{
+.account-name {
+ font-size: 20px;
+ /* color:; */
  padding: 40px;
 }
+
+.inquiryEnclosure {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  width: 700px;
+}
+
+/* お問い合わせinquiry editページ タイトル */
+.inquiryTitle {
+  font-size: 20px;
+  color: #464747;
+  font-weight: normal;
+  padding: 30px 0px;
+}
+
+svg.w-5.h-5 {
+    display: none !important;
+}
+
+.inquiry-part {
+  padding: 100px;
+}
+
+.inquiry_container{
+  
+  background-color: #F6F9FC;
+  width: 50%; /* フォーム全体の幅を調整 */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+.btn-inquiryPrimary{
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  margin-left: 0px;
+  margin-top: 30px;
+}
+
+.status_name{
+  font-weight:bold;
+  padding: 20px 0px;
+  color: #464747;
+}
+
+/* お問い合わせ一覧 */
+.inquiryThead {
+  margin: 10px 40px;
+}
+
+.itemInquiry {
+  background-color: #f7f7f7;
+}
+
+/* お問い合わせ編集ページ　備考欄 */
+.remarks_form_control {
+   width: 100%;   /* 横いっぱいに広げる */
+    box-sizing: border-box; /* padding や border を含めてもはみ出さない */
+    resize: vertical; /* 縦方向だけリサイズ可能（横は固定） */
+}
+
+
 
 /* テーブルが通常時 */
 .table-part {
@@ -846,6 +909,24 @@ table th,td{
   width: 10%;
 }
 
+.inquiryRemarks,.inquiryInformation {
+  font-weight: bold;
+  padding: 20px 0px ;
+  color: #464747;
+}
+
+.inquiryDetails{
+   font-weight: bold;
+   color: #464747;
+}
+
+ .inquiryName{
+   color: #464747;
+ }
+
+
+
+
 /* 備考欄枠　新規登録画面　create　new_registration */
 .remarksColumn {
   margin: 5px;
@@ -954,7 +1035,18 @@ input {
   color: #ff0000; /* マウスホバー時に濃い赤に */
 }
 
-.pagenation-wrapper {
+/* お問い合わせページ　ページネーション */
+.pagination-wrapper {
   margin-top: 20px;
   text-align: center;
 }
+
+.pagination-wrapper a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.pagination-wrapper a:hover {
+    text-decoration: underline;
+}
+

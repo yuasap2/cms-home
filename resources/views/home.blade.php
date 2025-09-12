@@ -14,14 +14,14 @@
                 <div class="content">
                     <h3 class ="content-top">TOP</h3>
                     <h2 class="home-screen">HOME</h2>
-                    <div class ="content-home">
+                    {{-- <div class ="content-home">
                         <div class ='member'>
                             <div>
                                 <div class = 'member-registration'>会員登録</div>
                                 <div class = 'membership-roll'>会員一覧</div>
                              </div>
                         </div>
-                    </div>
+                    </div> --}}
                  </div>                   
             </div>
 </body>

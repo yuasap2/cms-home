@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inquiry;
 use Illuminate\Http\Request;
 
 use App\Mail\ContactsSendmail;
@@ -70,37 +71,75 @@ class ContactsController extends Controller
             'body'  =>  'required',
         ]);
 
-        //フォームから受け取ったactionの値を取得
-        $action = $request->input('action');
+        // データ保存
+         $saved = Inquiry::create([
+            'company'          => $request->input('company'),
+            'member_name'      => $request->input('name'),
+            'phone_number'     => $request->input('telephone'),
+            'email'            => $request->input('email'),
+            'date_of_birth'    => $request->input('date'),
+            'gender'           => $request->input('gender'),
+            'job'              => $request->input('job'),
+            'inquiry_details'  => $request->input('body'),
+            'status'           => '未対応', // デフォルト値
+        ]);
 
-        //フォームから受け取ったactionを除いたinputの値を取得
-        $inputs = $request->except('action');
+        //  完了画面用に必要な形で一時保存（PRG）
+        session()->flash('inquiry', [
+            'company'   => $saved->company,
+            'name'      => $saved->member_name,
+            'telephone' => $saved->phone_number,
+            'email'     => $saved->email,
+            'date'      => $saved->date_of_birth,     // ← 追加
+            'gender'    => $saved->gender,            // ← 追加
+            'job'       => $saved->job,               // ← 追加
+            'body'      => $saved->inquiry_details,   // ← 追加
+        ]);
 
-        //actionの値で分岐
-        if($action !=='submit'){
-            return redirect()
-                ->route('contact.index')
-                ->withInput($inputs);
-       
-        } else {
-            // //入力されたメールアドレスにメールを送信
-            // \Mail::to($inputs['email'])->send(new ContactsSendmail($inputs));
 
-            // // 自分にメールを送信
-            // \Mail::to('mongaifushutsu0423@gmail.com')->send(new ContactsSendmail($inputs));
+        // POST→GET にリダイレクト
+        return redirect()->route('contact.thanks');
 
-            // 再送信を防ぐためにトークンを再配行
-            // $request->session()->regenerateToken();
-
-            $inputs = $request->all();
-
-            //送信完了ページのviewを表示
-            return view('contact.thanks',[
-            'inputs' => $inputs,
-            ]);
-        }
-    
     }
-
-   
+        // 完了画面（GET）
+        public function thanks()
+        {
+            $inquiry = session('inquiry');
+            if (!$inquiry) {
+                return redirect()->route('contact.index'); // 直アクセス対策
+            }
+            return view('contact.thanks', compact('inquiry'));
+        }
 }
+        // //フォームから受け取ったactionの値を取得
+        // // $action = $request->input('action');
+
+        // //フォームから受け取ったactionを除いたinputの値を取得
+        // // $inputs = $request->except('action');
+
+        // // return redirect()->route('contact.send')->with('success', 'お問い合わせを送信しました。');
+
+        // //actionの値で分岐
+        // if($action !=='submit'){
+        //     return redirect()
+        //         ->route('contact.index')
+        //         ->withInput($inputs);
+       
+        // } else {
+        //     // //入力されたメールアドレスにメールを送信
+        //     // \Mail::to($inputs['email'])->send(new ContactsSendmail($inputs));
+
+        //     // // 自分にメールを送信
+        //     // \Mail::to('mongaifushutsu0423@gmail.com')->send(new ContactsSendmail($inputs));
+
+        //     // 再送信を防ぐためにトークンを再配行
+        //     // $request->session()->regenerateToken();
+
+        //     $inputs = $request->all();
+            
+
+        //     //送信完了ページのviewを表示
+        //     return view('contact.thanks',[
+        //     'inputs' => $inputs,
+        //     ]);
+        // }

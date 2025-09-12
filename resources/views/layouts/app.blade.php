@@ -69,6 +69,12 @@
                             <div class = sidebar_menu_inquiry>　お問い合わせ一覧</div>
                             </li>
                         </a>
+                        <!-- アイコン お問い合わせ -->
+                        <a href="{{ route('contact.index') }}" class="sidebar-icon">
+                            <li class="side-button"><i class="fa-regular fa-address-card"></i>
+                            <div class = sidebar_menu_inquiry>　お問い合わせ</div>
+                            </li>
+                        </a>
                    </ul>
             </div> 
             <script>
