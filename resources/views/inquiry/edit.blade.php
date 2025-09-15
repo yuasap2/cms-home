@@ -86,17 +86,23 @@
 
                 <div class="form-group">
                     <div class="inquiryName">メールアドレス:</div>
-                    <p class="form-control-plaintext">{{ $inquiry->email }}</p>
+                    <p class="form-control-plaintext">
+                        {{ $inquiry->email }}
+                    </p>
                 </div>
 
                 <div class="form-group">
                     <div class="inquiryName">生年月日:</div>
-                    <p class="form-control-plaintext">{{ $inquiry->date }}</p>
+                    <p class="form-control-plaintext">
+                      {{ \Carbon\Carbon::parse($inquiry->date_of_birth)->format('Y年m月d日') }}
+                    </p>
                 </div>
 
                 <div class="form-group">
                     <div class="inquiryName">性別:</div>
-                    <p class="form-control-plaintext">{{ $inquiry->gender }}</p>
+                    <p class="form-control-plaintext">
+                        {{ $inquiry->gender === 'man' ? '男' : '女' }}
+                    </p>
                 </div>
 
                 <div class="form-group">

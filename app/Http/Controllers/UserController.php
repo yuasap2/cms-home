@@ -11,11 +11,6 @@ class UserController extends Controller
     // ユーザー一覧を表示
     public function index()
     {
-        // // ユーザー情報を全件取得
-        // $users = User::all();
-
-        // // ビューにデータを渡して返す
-        // return view('users.index', compact('users'));
         $users = User::paginate(10);   // 例: 10件ずつ
         return view('member', compact('users'));
     }

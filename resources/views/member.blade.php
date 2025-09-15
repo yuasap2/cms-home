@@ -12,8 +12,6 @@
                     </form> 
                 </header>
                     <div class="content">
-                        {{-- <h3 class ="content-top">TOP</h3>
-                        <h2 class="home-screen">HOME</h2> --}}
                             <div class ="content-home">
                                 <div class ='member'>
                                     <div>

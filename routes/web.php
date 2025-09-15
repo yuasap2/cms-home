@@ -46,7 +46,7 @@ Route::get('/contact/thanks', [ContactsController::class, 'thanks'])->name('cont
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
+// Route::get('/member', [App\Http\Controllers\MemberController::class, 'index'])->name('member');
 Route::get('/member', [App\Http\Controllers\UserController::class, 'index'])->name('member');
 Route::post('/logout',[App\Http\Controllers\LogoutController::class,'logout'])->name('logout');
 Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account');

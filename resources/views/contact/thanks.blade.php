@@ -2,35 +2,35 @@
     @extends('layouts.base')
 
     @section('content')
-    <div class= "Form-thanks">
+    <div class= "FormThanks">
       送信完了しました
     </div>
 
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             会社名: {{ $inquiry['company']}}
         </p>
     </div>
 
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             氏名 :{{ $inquiry['name']}}
         </p>
     </div>
 
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             電話番号:{{ $inquiry['telephone']}}
         </p>
      </div>
 
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             メールアドレス: {{ $inquiry['email']}}
         </p>
     </div>
     
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             生年月日: 
             @if(!empty($inquiry['date']))
@@ -39,20 +39,20 @@
         </p>
     </div>
 
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             性別:{{ ($inquiry['gender'] ?? '') == 'man' ? '男' : '女' }}
         </p>
     </div>
 
     
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             職業:{{ $inquiry['job'] ?? ''}}
         </p>
     </div>
      
-    <div class="Form-confirm">
+    <div class="FormConfirm">
         <p>
             お問い合わせ内容: {!! nl2br(e($inquiry['body'] ?? '')) !!}
         </p>
