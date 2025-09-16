@@ -603,7 +603,7 @@
 	border: 2px solid #4CAF93;
 	color: #4CAF93;
 	transition: 0.5s;
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 105px;
 }
@@ -1045,4 +1045,3 @@ input {
 .pagination-wrapper a:hover {
     text-decoration: underline;
 }
-
