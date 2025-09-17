@@ -333,7 +333,7 @@
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  width: calc(100% - 150px);
+  width: calc(100% - 180px);
   font-style: normal;
   margin-left: auto;
 }
@@ -616,11 +616,16 @@
 
 /* 表 */
 
+.tdEdit,.tdDelete {
+  max-width: 30px;
+}
+
 table {
   border-collapse:  collapse; /* セルの線を重ねる */
   /* width:  100%;               幅指定 */
   font-size: 90%;
-  max-width: 100%;
+  width: 100%;            /* max-width:100% → width:100% に */
+  table-layout: fixed;    /* 列幅を安定させる */
 }
 
 
@@ -628,11 +633,20 @@ table th,td{
   border:1px solid #333;
   padding: 16px;
   margin: 10px;
+  word-break: break-word; /* 長い文字列の折り返し */
+
+  /* min-width: 100px; */
 }
 
 /* 表（編集） */
 .editTable {
-  min-width: 20px;
+  width: 40px;
+  text-align: center;
+}
+
+.deleteTable {
+  width: 40px;
+  text-align: center;
 }
 
 /* 表（名前） */
@@ -649,12 +663,12 @@ table th,td{
 
 /* 表（メールアドレス） */
 .mailTable {
-  width: 20px;
+  min-width: 20px;
 }
 
 /* 表（電話番号） */
 .phoneTable {
-  width: 20px;
+  min-width: 100px;
 }
 
 /* 表（都道府県） */
@@ -664,17 +678,17 @@ table th,td{
 
 /* 表（市町村） */
 .municipalityTable {
-  width: 15px;
+  min-width: 60px;
 }
 
 /* 表（番地・アパート名） */
 .addressTable {
-  max-width: 200px;
+  min-width: 200px;
 }
 
 /* 表（備考欄） */
 .remarkTable {
-  max-width: 400px;
+  min-width: 400px;
 }
 
 /* アカウント一覧 */

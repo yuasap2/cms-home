@@ -38,11 +38,11 @@
                          <!-- {{-- <tr> => テーブルロー => 1行分のデータを表す --}} -->
                         <tr>
                             <!-- {{-- <td> => テーブルデータ => 1セル分のデータを表す --}} -->
-                            <td><a href="{{ route('users.edit' , $user->id) }}"  onclick="return confirm('編集しますか？');">
+                            <td class=tdEdit><a href="{{ route('users.edit' , $user->id) }}"  onclick="return confirm('編集しますか？');">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </td>
                             
-                            <td>
+                            <td class=tdDelete>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
