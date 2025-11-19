@@ -2,7 +2,7 @@
 <br>
 
 ■会社名<br>
-{!! company !!}<br>
+{!! $company !!}<br>
 <br>
 ■氏名<br>
 {!! $name !!}<br>
