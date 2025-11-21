@@ -21,13 +21,13 @@
             <p class = "fill">
                 <span class="required">必須</span>
                 <span class="itemName">会員名</span>
-                @if($errors->has('member_name'))
-                    <a class="error-message-create">{{ $errors->first('member_name')}}</a>
+                @if($errors->has('name'))
+                    <a class="error-message-create">{{ $errors->first('name')}}</a>
                 @endif
             </p>
             <br>
             <p class= "input-elea">
-              <input type="text" name="member_name" class="input-field" maxlength="8" value="{{ old('member_name')}}" placeholder="山田太郎">
+              <input type="text" name="name" class="input-field" maxlength="8" value="{{ old('name')}}" placeholder="山田太郎">
             </p>
          
             <p class = "fill">

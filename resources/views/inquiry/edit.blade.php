@@ -76,7 +76,7 @@
             
                 <div class="form-group">
                     <div class="inquiryName">名前:</div>
-                    <p class="form-control-plaintext">{{ $inquiry->member_name }}</p>
+                    <p class="form-control-plaintext">{{ $inquiry->name }}</p>
                 </div>
 
                 <div class="form-group">

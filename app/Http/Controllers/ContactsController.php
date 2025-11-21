@@ -74,7 +74,7 @@ class ContactsController extends Controller
         // データ保存
          $saved = Inquiry::create([
             'company'          => $request->input('company'),
-            'member_name'      => $request->input('name'),
+            'name'             => $request->input('name'),
             'phone_number'     => $request->input('telephone'),
             'email'            => $request->input('email'),
             'date_of_birth'    => $request->input('date'),
@@ -87,7 +87,7 @@ class ContactsController extends Controller
         //  完了画面用に必要な形で一時保存（PRG）
         session()->flash('inquiry', [
             'company'   => $saved->company,
-            'name'      => $saved->member_name,
+            'name'      => $saved->name,
             'telephone' => $saved->phone_number,
             'email'     => $saved->email,
             'date'      => $saved->date_of_birth,     // ← 追加

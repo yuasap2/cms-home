@@ -17,7 +17,7 @@ class CreateInquiryTable extends Migration
             $table->id();
             $table->string('status')->nullable();
             $table->string('company')->nullable();
-            $table->string('member_name',50);
+            $table->string('name',50);
             $table->string('furigana')->nullable();
             $table->string('gender')->nullable();
             $table->string('email')->unique();

@@ -42,7 +42,7 @@ class UserController extends Controller
 
             // バリデーションとデータ更新処理
             $validatedData = $request->validate([
-                'member_name' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
                 'phone_number' => 'required|string|max:15',
                 'prefecture' => 'required|string|max:255',

@@ -8,10 +8,10 @@
             @method('PUT')
 
             <div class="form-group">
-                <label for="member_name">名前</label>
-                <input type="text" name="member_name" id="member_name" class="form-control" value="{{ $user->member_name }}"
-                       value="{{ old('member_name', $user->member_name) }}">
-                       @error('member_name')
+                <label for="name">名前</label>
+                <input type="text" name="name" id="name" class="form-control" value="{{ $user->name }}"
+                       value="{{ old('name', $user->name) }}">
+                       @error('name')
                             <div class="text-danger">{{ $message }}</div>
                        @enderror
             </div>

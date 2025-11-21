@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             // 会員名　必須　最大30文字
-            $table->string('member_name',30);
+            $table->string('name',30);
             // フリガナ　必須　最大30文字
             $table->string('furigana',30);
             // メールアドレス　必須 文字列 email 重複なし

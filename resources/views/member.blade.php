@@ -42,7 +42,7 @@
                          <!-- {{-- <tr> => テーブルロー => 1行分のデータを表す --}} -->
                         <tr>
                             <!-- {{-- <td> => テーブルデータ => 1セル分のデータを表す --}} -->
-                            <td>{{ $user->member_name }}</td>
+                            <td>{{ $user->name }}</td>
                             <td>{{ $user->furigana }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->phone_number }}</td>

@@ -17,7 +17,7 @@
                 @foreach ($inquiries as $inquiry)
                     <tr>
                         <td>{{ $inquiries->id }}</td>
-                        <td>{{ $inquiries->member_name }}</td>
+                        <td>{{ $inquiries->name }}</td>
                         <td>{{ $inquiries->email }}</td>
                         <td>
                             <a href="{{ route('inquiry.edit', $inquiry->id) }}">編集</a>

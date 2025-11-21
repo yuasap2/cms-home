@@ -24,7 +24,7 @@ class InquiryFactory extends Factory
             'inquiry_details' => $this->faker->realText(50),
             'remarks' => $this->faker->sentence(),
             'company' => $this->faker->company,
-            'member_name' => $this->faker->name,
+            'name' => $this->faker->name,
             'phone_number' => $this->faker->phoneNumber,
             'email' => $this->faker->safeEmail,
             'postal_code' => $this->faker->postcode,

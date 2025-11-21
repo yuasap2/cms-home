@@ -17,7 +17,7 @@
                 @foreach ($users as $user)
                     <tr>
                         <td>{{ $user->id }}</td>
-                        <td>{{ $user->member_name }}</td>
+                        <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
                             <a href="{{ route('users.edit', $user->id) }}">編集</a>

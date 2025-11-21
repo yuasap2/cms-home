@@ -21,7 +21,7 @@ class UserFactory extends Factory
         $faker = \Faker\Factory::create('ja_JP');
         
         return [
-            'member_name' => $faker->name,
+            'name' => $faker->name,
             'furigana' => $faker->kanaName,
             'email' => $faker->unique()->safeEmail(),
             'email_verified_at' => now(),

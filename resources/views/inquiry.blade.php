@@ -37,7 +37,7 @@
                             
                             <td>{{ $inquiry->status }}</td>
                             <td>{{ $inquiry->company }}</td>
-                            <td>{{ $inquiry->member_name }}</td>
+                            <td>{{ $inquiry->name }}</td>
                             <td>{{ $inquiry->phone_number }}</td>
                         </tr>
                     @endforeach

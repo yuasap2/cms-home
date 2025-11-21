@@ -29,7 +29,7 @@ class RegistrationController extends Controller
          // 電話番号と郵便番号が空かどうかチェック（まとめエラー）
 
      $validator = Validator::make($request->all(), [
-            'member_name' => 'required|string|max:50',
+            'name' => 'required|string|max:50',
             'furigana' => 'required|string|max:50',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => [
@@ -49,8 +49,8 @@ class RegistrationController extends Controller
             'address' => 'required|string|max:255',
             'remarks' => 'nullable|string|max:255'
         ],[
-         'member_name.required' => '※氏名は必須です。',
-         'member_name.max' => '※氏名は :max文字以内でお願いします。',
+         'name.required' => '※氏名は必須です。',
+         'name.max' => '※氏名は :max文字以内でお願いします。',
          'furigana.required' => '※フリガナは必須です。',
          'furigana.max' => '※フリガナは :max文字以内でお願いします。',
          'email.required' => '※メールアドレスは必須です。',
@@ -108,7 +108,7 @@ class RegistrationController extends Controller
         try{
             // データの保存
            User::create([
-               'member_name'  => $request->input('member_name'),
+               'name'         => $request->input('name'),
                'furigana'     => $request->input('furigana'),
                'email'        => $request->input('email'),
                'password'     => bcrypt($request->input('password')),//パスワードを暗号化

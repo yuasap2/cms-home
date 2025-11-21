@@ -52,7 +52,7 @@
                                 </form>
                             </td>
                             
-                            <td>{{ $user->member_name }}</td>
+                            <td>{{ $user->name }}</td>
                             <td>{{ $user->furigana }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->phone_number }}</td>

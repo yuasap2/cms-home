@@ -10,7 +10,7 @@
                         @csrf   
                         <p class = "fill">
                             会員名
-                            <input type = "text"  name="member_name" maxlength="8" class="input-field" />
+                            <input type = "text"  name="name" maxlength="8" class="input-field" />
                         </p>
 
                         <p class = "fill">
